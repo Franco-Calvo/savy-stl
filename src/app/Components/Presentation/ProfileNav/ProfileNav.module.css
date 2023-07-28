@@ -1,0 +1,78 @@
+.profile {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  background-image: url(../Images/50.png);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.profile:hover {
+  filter: brightness(0.4);
+}
+
+.containerAnchors {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 5px;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 5px;
+  background: rgb(112, 112, 112);
+  animation: slideDown 0.3s ease;
+  border-radius: 6px;
+  width: 15rem;
+  padding: 1rem;
+}
+
+.containerAnchors a {
+  text-decoration: none;
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  color: white;
+}
+.containerAnchors a:hover {
+  color: rgb(199, 199, 199);
+}
+
+.contentProfileContainer {
+  position: relative;
+  visibility: visible;
+  opacity: 1;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.referenceArrow {
+  position: absolute;
+  top: 0px;
+  right: 9px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid rgb(112, 112, 112);
+}
+
+.hrSeparator {
+  width: 80%;
+  opacity: 0.3;
+}
+
+.personalInfo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}

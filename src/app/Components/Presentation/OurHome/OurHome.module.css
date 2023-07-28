@@ -1,0 +1,32 @@
+.OurHome {
+  background: rgb(245, 245, 245);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.OurHomeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  font-size: 1.5rem;
+  gap: 2rem;
+}
+
+.InfoOur {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1rem;
+  gap: .5rem;
+}
+
+.InfoOur p {
+  width: 70%;
+}
