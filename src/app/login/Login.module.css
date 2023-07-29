@@ -1,0 +1,87 @@
+.formLogin {
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  gap: 2rem;
+  position: relative;
+}
+
+.inputContainer input::placeholder {
+  color: #ffffff7e;
+  text-align: flex-start;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.actionSignUp {
+  font-weight: 400;
+  cursor: pointer;
+  color: white;
+}
+.actionSignUp:hover {
+  color: #0094ff;
+}
+
+.passwordRecover {
+  font-weight: 400;
+  cursor: pointer;
+  color: white;
+}
+.passwordRecover:hover {
+  color: #0094ff;
+}
+
+.notAccount {
+  font-weight: 200;
+}
+
+.labelBottom {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.circleGradient {
+  position: absolute;
+  top: 0;
+  left: 25rem;
+}
+
+.circleGradientCopy {
+  position: absolute;
+  top: 10rem;
+  right: 35rem;
+}
+
+.circleGradient:hover {
+  filter: drop-shadow(0 0 50px rgba(35, 204, 247, 0.337));
+  transition: all 3s;
+  cursor: pointer;
+}
+.circleGradientCopy:hover {
+  filter: drop-shadow(0 0 50px rgba(255, 255, 255, 0.2337));
+  transition: all 3s;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.bouncingCircle {
+  animation: bounce 3s infinite;
+}

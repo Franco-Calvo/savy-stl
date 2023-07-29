@@ -1,0 +1,8 @@
+.background {
+  background-color: #010006;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow-x: hidden;
+}
