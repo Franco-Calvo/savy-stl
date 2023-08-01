@@ -1,0 +1,96 @@
+.containerFiles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100vh;
+}
+
+.adminFiles {
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dashedContainer {
+  background: rgba(0, 128, 220, 0.08);
+  border: 2px dashed #0080dc;
+  border-radius: 24px;
+  width: 10rem;
+  height: 10rem;
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+}
+
+.dashedContainer:hover {
+  background: rgba(0, 128, 220, 0.18);
+}
+
+.dashedContainer span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+}
+
+.uploadFiles {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.iconUpload {
+  font-size: 10rem;
+  color: white;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.dashedContainer.dragging {
+  border-color: #007bff;
+}
+
+.containerButton {
+  width: 10rem;
+}
+
+.maxSize {
+  font-size: 12px;
+  color: gray;
+  position: absolute;
+  bottom: 8px;
+  font-weight: 500;
+}
+
+.fileName {
+  font-size: 10px;
+  padding: .2rem;
+  text-align: center;
+}
+
+.progress-bar-container {
+  width: 12rem;
+  height: 5px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #3b39d8;
+  border-radius: 5px;
+  transition: width 0.3s;
+}

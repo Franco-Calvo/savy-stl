@@ -7,29 +7,21 @@ const AdminNav: React.FC = () => {
     <aside className={styles.adminNav}>
       <h3>Admin Panel</h3>
       <span>
-        <Link href="/adminpanel/categories">
-          <a>
-            <FaFilter />
-            Categorías
-          </a>
+        <Link href="/admin/categories">
+          <FaFilter />
+          Categorías
         </Link>
-        <Link href="/adminpanel/upload">
-          <a>
-            <FaUpload />
-            Subir Archivos
-          </a>
+        <Link href="/admin/upload">
+          <FaUpload />
+          Subir Archivos
         </Link>
         <Link href="/">
-          <a>
-            <FaRegFile />
-            Archivos Semanales
-          </a>
+          <FaRegFile />
+          Archivos Semanales
         </Link>
         <Link href="/">
-          <a>
-            <FaUsers />
-            Usuarios
-          </a>
+          <FaUsers />
+          Usuarios
         </Link>
       </span>
     </aside>

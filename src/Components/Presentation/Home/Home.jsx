@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./Home.module.css";
+import Link from "next/link";
 
 export default function IndexHome() {
   return (
-    <div className={styles.Home}>
+    <div className={styles.home}>
       <div className={styles.containerPrincipal}>
         <div className={styles.containerSecundario}>
           <h1 className={styles.principalTitle}>Busca, descarga e imprime</h1>
@@ -17,9 +18,9 @@ export default function IndexHome() {
             </p>
           </span>
           <span className={styles.containerButtons}>
-            {/* <Link href="/explore" className="gradientButton">
-            Explorar
-          </Link> */}
+            <Link href="/explore" className={styles.gradientButton}>
+              Explorar
+            </Link>
             <button className={styles.alternativeButton}>Contratar</button>
           </span>
         </div>

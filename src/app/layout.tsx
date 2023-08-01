@@ -1,7 +1,7 @@
 import Navbar from "@/Components/Presentation/Navbar/Navbar";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import styles from "../styles/globals.module.css";
+import "../styles/globals.css";
 import { ReduxProvider } from "@/store/provider";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={styles.background}>
+      <body className="background">
         <ReduxProvider>
           <Navbar />
           {children}

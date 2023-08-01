@@ -27,6 +27,7 @@ export default function Explorer() {
   };
 
   const cards = useSelector((store) => store.cardsReducer.cards);
+  console.log(cards);
   const publicCards = cards.filter((card) => card.status === "public");
 
   const dispatch = useDispatch();

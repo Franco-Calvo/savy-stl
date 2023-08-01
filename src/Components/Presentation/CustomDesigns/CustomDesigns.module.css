@@ -26,9 +26,7 @@
   flex-direction: column;
   padding-left: 2rem;
   color: white;
-  gap: .5rem;
   width: 50%;
-  height: 10%;
 }
 
 .stepsInfo span {
@@ -37,7 +35,8 @@
 }
 
 .stepsInfo h4 {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
+  margin: 0;
 }
 
 .containerStep {
@@ -46,10 +45,10 @@
 }
 
 .footerContainer {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    bottom: 1rem;
-    width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 1rem;
+  width: 100%;
 }

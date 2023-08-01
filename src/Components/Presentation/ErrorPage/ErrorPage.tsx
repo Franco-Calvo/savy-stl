@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import styles from "./ErrorPage.styles.module.css";
+import styles from "./ErrorPage.module.css";
+import Link from "next/link";
 
 interface ErrorPageProps {
   title: string;
@@ -24,12 +25,12 @@ const ErrorPage: React.FC<ErrorPageProps> = ({
             width={400}
             height={400}
           />
-          <a
+          <Link
             href="http://salehriaz.com/404Page/404.html"
             className={styles.btnGoHome}
           >
             {button}
-          </a>
+          </Link>
         </div>
         <div className={styles.objects}>
           <Image

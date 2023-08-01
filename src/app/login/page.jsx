@@ -40,7 +40,7 @@ export default function Login() {
       );
       toast.success(res.data.message);
       setTimeout(() => {
-        router.push("/uploadfile");
+        router.push("/");
       }, 3000);
     } catch (error) {
       toast.error(error?.res?.data?.message);
@@ -52,7 +52,7 @@ export default function Login() {
     <div className={styles.formLogin}>
       <Toaster position="top-right" />
       <h3>Nos alegra verte por aquí</h3>
-      <div className={styles.circleGradient && styles.bouncingCircle}>
+      <div className={`${styles.circleGradient} ${styles.bouncingCircle}`}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="256"
@@ -83,7 +83,7 @@ export default function Login() {
           </defs>
         </svg>
       </div>
-      <div className={styles.circleGradientCopy && styles.bouncingCircle}>
+      <div className={`${styles.circleGradientCopy} ${styles.bouncingCircle}`}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="138"
