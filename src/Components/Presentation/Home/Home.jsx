@@ -1,6 +1,9 @@
 import React from "react";
 import styles from "./Home.module.css";
 import Link from "next/link";
+import Image from "next/image";
+// import imgHome from "../../images/Astronaut 1_02 1.svg";
+// import imgWorld from "../../images/Earth_02 1.svg";
 
 export default function IndexHome() {
   return (
@@ -24,7 +27,10 @@ export default function IndexHome() {
             <button className={styles.alternativeButton}>Contratar</button>
           </span>
         </div>
-        {/* <Image className="monster" src={image} alt="" /> */}
+        <div className={styles.containerImg}>
+          {/* <Image className={styles.imgWorld} src={imgWorld} alt="asd" /> */}
+          {/* <Image src={imgHome} alt="asd" /> */}
+        </div>
       </div>
     </div>
   );

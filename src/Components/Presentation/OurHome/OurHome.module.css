@@ -5,28 +5,36 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 
 .OurHomeContainer {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 90%;
   flex-direction: column;
-  width: 80%;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   gap: 2rem;
 }
 
 .InfoOur {
   display: flex;
   justify-content: flex-start;
-  flex-direction: column;
   align-items: flex-start;
-  font-size: 1rem;
-  gap: .5rem;
+  font-size: 1.5rem;
+  gap: 0.5rem;
+}
+
+.ContenidOur {
+  width: 80%;
+}
+
+.InfoOur img {
+  display: flex;
 }
 
 .InfoOur p {
-  width: 70%;
+  width: 100%;
+  line-height: 30px;
+  font-size: 1rem;
 }
