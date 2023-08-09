@@ -1,19 +1,21 @@
 import React from "react";
-import Image from "next/image";
 import styles from "./OurHome.module.css";
+import { svgCohete } from "../Icons/icons";
 
 const OurHome: React.FC = () => {
   return (
-    <div className={styles.OurHome}>
-      <div className={styles.OurHomeContainer}>
-        <div>
+    <div className={styles.ourHome}>
+      <div className={styles.ourHomeContainer}>
+        <div className={styles.title}>
           <h2>Innovando en el mundo 3D</h2>
         </div>
-        <div className={styles.InfoOur}>
-          <div className={styles.ContenidOur}>
-            <h3>Explora, crea y materializa tus ideas</h3>
+        <div className={styles.infoOur}>
+          <div className={styles.contenidOur}>
+            <h3 className={styles.titleOur}>
+              Explora, crea y materializa tus ideas
+            </h3>
             <p>
-              En SavySTL, estamos dedicados a ofrecerte una experiencia
+              En <b>SavySTL</b>, estamos dedicados a ofrecerte una experiencia
               excepcional en el mundo de la impresión 3D. Nuestra plataforma te
               brinda acceso a una amplia selección de archivos STL de alta
               calidad para que puedas descargar y materializar tus proyectos.
@@ -23,6 +25,8 @@ const OurHome: React.FC = () => {
               de posibilidades en la impresión 3D.
             </p>
           </div>
+
+          <div className={styles.imgOur}>{svgCohete()}</div>
         </div>
       </div>
     </div>

@@ -3,12 +3,16 @@ import styles from "./Button.module.css";
 
 interface ButtonProps {
   text: string;
+  onClick: () => void;
   customStyle?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, customStyle }) => {
-  const buttonClasses = `${styles.buttonCard} ${styles.buttonCustom} ${customStyle}`;
-  return <button className={buttonClasses && styles.buttonCard}>{text}</button>;
-};
+const Button: React.FC<ButtonProps> = ({ text, customStyle, onClick }) => {
+  const buttonClasses = `${styles.buttonCard} ${styles.customButton} ${customStyle}`;
 
-;
+  return (
+    <button onClick={onClick} className={buttonClasses}>
+      {text}
+    </button>
+  );
+};

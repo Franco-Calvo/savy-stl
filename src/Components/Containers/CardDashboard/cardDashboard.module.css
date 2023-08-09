@@ -1,0 +1,37 @@
+.cardDash {
+  display: flex;
+  width: 300px;
+  border-radius: 8px;
+  height: 112px;
+  border: 1px solid #1a1a1a;
+  background: #0c0c0c;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.contenid {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 70%;
+  gap: 1rem;
+  padding-left: 1rem;
+}
+
+.contenid h3 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  color: white;
+}
+.contenid span {
+  color: #0094ff;
+}
+
+.image {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

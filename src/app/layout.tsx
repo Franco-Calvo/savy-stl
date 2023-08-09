@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="background">
         <ReduxProvider>
-          <Navbar />
+          {/* <Navbar /> */}
           {children}
         </ReduxProvider>
       </body>

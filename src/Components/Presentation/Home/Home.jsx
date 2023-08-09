@@ -1,9 +1,7 @@
 import React from "react";
 import styles from "./Home.module.css";
 import Link from "next/link";
-import Image from "next/image";
-// import imgHome from "../../images/Astronaut 1_02 1.svg";
-// import imgWorld from "../../images/Earth_02 1.svg";
+import { imgAstronaut } from "../Icons/icons";
 
 export default function IndexHome() {
   return (
@@ -27,10 +25,7 @@ export default function IndexHome() {
             <button className={styles.alternativeButton}>Contratar</button>
           </span>
         </div>
-        <div className={styles.containerImg}>
-          {/* <Image className={styles.imgWorld} src={imgWorld} alt="asd" /> */}
-          {/* <Image src={imgHome} alt="asd" /> */}
-        </div>
+        <div className={styles.containerImg}>{imgAstronaut()}</div>
       </div>
     </div>
   );

@@ -30,14 +30,18 @@ const Card: React.FC<CardProps> = ({
         />
       </div>
 
-      <div className={styles.cardBody}>
-        <h2>{title}</h2>
-        <p>{description}</p>
-        <span className={styles.containerDownload}>
-          <Button text={text} onClick={onClick} />
-        </span>
+      <div className={styles.cardBody}>        
+          <h2>{title}</h2>
+          <p>{description}</p>
       </div>
+        
+      <span className={styles.containerDownload}>
+          <Button text={text} customStyle={styles.buttonCard} onClick={onClick} />
+      </span>
     </div>
+
+
+        
   );
 };
 

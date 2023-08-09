@@ -9,7 +9,7 @@ export default function AdminLayout({
   return (
     <>
       <AdminNav />
-      <AdminWrapper>{children}</AdminWrapper>
+      {children}
     </>
   );
 }

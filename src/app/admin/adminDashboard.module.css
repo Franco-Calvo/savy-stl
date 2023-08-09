@@ -1,0 +1,24 @@
+.adminPanel {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardContainer {
+  display: flex;
+  margin-top: 5rem;
+  justify-content: space-around;
+  align-items: center;
+  width: 96%;
+  height: 120px;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.pagesVisited {
+  background-color: rgb(73, 67, 67);
+  width: 1345px;
+  height: 360px;
+}

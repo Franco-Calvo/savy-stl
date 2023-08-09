@@ -33,6 +33,29 @@
   text-decoration: none;
 }
 
-.anchor:hover {
-  color: #0094ff;
+.anchor {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.anchor::after {
+  content: "";
+  background-color: #0094ff;
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.4s ease;
+  -webkit-transition: transform 0.4s ease;
+  -moz-transition: transform 0.4s ease;
+  -ms-transition: transform 0.4s ease;
+  -o-transition: transform 0.4s ease;
+}
+
+.anchor:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }

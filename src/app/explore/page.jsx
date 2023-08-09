@@ -18,6 +18,10 @@ export default function Explorer() {
 
   const text = useRef("");
 
+  const sortedCategories = [...categories];
+
+  sortedCategories.sort((a, b) => a.name.localeCompare(b.name));
+
   const downloadFile = (fileModelLink) => {
     const link = document.createElement("a");
     link.href = fileModelLink;
@@ -51,39 +55,54 @@ export default function Explorer() {
 
   return (
     <div className={styles.containerExplorer}>
-      <div className={styles.searchBar}>
-        <input
-          type="text"
-          ref={text}
-          placeholder="Busca un modelo aquí"
-          onChange={(e) =>
-            setFilterOptions((prevOptions) => ({
-              ...prevOptions,
-              searchTerm: e.target.value,
-            }))
-          }
-        />
+      <div className={styles.asideBar}>
+        <div className={styles.searchBar}>
+          <input
+            type="text"
+            ref={text}
+            placeholder="Busca un modelo aquí"
+            onChange={(e) =>
+              setFilterOptions((prevOptions) => ({
+                ...prevOptions,
+                searchTerm: e.target.value,
+              }))
+            }
+          />
 
-        <button>
-          <FaSearch className={styles.searchIcon} />
-        </button>
-      </div>
-      <div className={styles.categoryContainer}>
-        {categories.map((cat) => (
-          <div className={styles.category} key={cat.name}>
-            <label htmlFor={cat.name}>{cat.name}</label>
-            <input
-              type="checkbox"
-              id={cat.name}
-              name={cat.name}
-              checked={filterOptions.selectedCategory === cat.name}
-              onChange={handleCategoryChange}
-            />
+          <button>
+            <FaSearch className={styles.searchIcon} />
+          </button>
+        </div>
+        <div className={styles.categoryContainer}>
+          <h2>Categorias</h2>
+          <div className={styles.categoryButton}>
+            {sortedCategories.map((cat) => (
+              <div className={styles.category} key={cat.name}>
+                <label className={styles.categoryLabel} htmlFor={cat.name}>
+                  {cat.name}
+                </label>
+                <input
+                  className={styles.inputNone}
+                  type="checkbox"
+                  id={cat.name}
+                  name={cat.name}
+                  checked={filterOptions.selectedCategory === cat.name}
+                  onChange={handleCategoryChange}
+                />
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+
+        <div className={styles.spamContainer}>
+          <div className={styles.spamBox}>asd</div>
+          <div className={styles.spamBox}>asd</div>
+        </div>
       </div>
 
       <div className={styles.cardsContainer}>
+        <div className={styles.spamCards}>asd</div>
+
         {publicCards.map((card) => (
           <Card
             key={card._id}

@@ -1,41 +1,132 @@
 .containerExplorer {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   margin-top: 6rem;
-  align-items: center;
-  gap: 2rem;
   width: 100%;
   margin-bottom: 5rem;
 }
 
+.asideBar {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  flex-direction: column;
+  width: 40%;
+  margin-left: 5px;
+  height: 100vh;
+}
+
 .categoryContainer {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
+  gap: 1rem;
   width: 95%;
+  flex-direction: column;
+  color: white;
 }
 
 .cardsContainer {
   display: flex;
   gap: 3rem;
   justify-content: center;
-  align-items: center;
+  width: 100%;
   flex-wrap: wrap;
-  width: 95%;
 }
 
-.categoriesContainer {
+.spamCards {
+  display: flex;
+  width: 85%;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: red;
+}
+
+.categoryButton {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-auto-columns: 100px; /* Ancho fijo para las columnas */
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 10px;
+}
+
+.categoryLabel {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  border-radius: 5px;
+  font-size: 14px;
   color: white;
-  gap: 0.5rem;
+  background-color: blue;
+  height: 22px;
+  width: 110px;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  text-align: center;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
-.category {
+.inputNone {
+  display: none;
+}
+.searchBar {
+  margin-top: 1rem;
+  position: relative;
+  width: 100%;
+  outline: 1px solid #cccccc28;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  margin-left: 20px;
+}
+
+.searchBar input {
+  width: 88%;
+  height: 40px;
+  padding-left: 20px;
+  font-size: 22px;
+  background-color: transparent;
+  border: none;
+  color: rgba(233, 230, 233, 0.76);
+}
+
+.searchBar input:focus {
+  border: none;
+  outline: none;
+}
+
+.searchBar button {
+  position: absolute;
+  bottom: 16%;
+  background-color: transparent;
+  border: none;
+  right: 1%;
+  cursor: pointer;
+  font-size: 20px;
+  color: rgba(233, 230, 233, 0.425);
+}
+
+.spamContainer {
   display: flex;
-  gap: 0.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 5rem;
+  width: 95%;
+}
+
+.spamBox {
+  display: flex;
+  width: 100%;
+  height: 200px;
+  margin-left: 10px;
+  background-color: red;
 }

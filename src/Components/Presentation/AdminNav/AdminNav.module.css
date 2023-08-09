@@ -5,9 +5,8 @@
   padding: 0.5rem;
   align-items: center;
   flex-direction: column;
-  gap: 0.8rem;
-  background: #363740;
-  width: 15rem;
+  min-width: 2rem;
+  background-color: rgb(25, 0, 255);
 }
 
 .adminNav h3 {
