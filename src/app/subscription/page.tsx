@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { RiCheckFill } from "react-icons/ri";
 import styles from "./Subscriptions.module.css";
+import Button from "@/Components/Containers/Button/Button";
 
 interface SubscriptionsProps {}
 
@@ -24,63 +25,7 @@ const Subscriptions: React.FC<SubscriptionsProps> = () => {
   return (
     <div className={styles.HomeContainer}>
       <div className={styles.containerCards}>
-        <div className={styles.oneDay}>
-          <h4>Suscríbete por día</h4>
-          <span className={styles.checkFill}>$150</span>
-          <span>
-            <RiCheckFill className={styles.checkFill} /> 10 descargas
-          </span>
-          <span>
-            <RiCheckFill className={styles.checkFill} /> 24hs de descargas
-          </span>
-          <span>
-            <RiCheckFill className={styles.checkFill} /> 24hs de descargas
-          </span>
-          <input
-            className={styles.buttonSubmit}
-            type="submit"
-            value="Comprar este plan"
-            onClick={() => handlePayment("day")}
-          />
-        </div>
-        <div className={styles.oneDay}>
-          <h4>Suscríbete por mes</h4>
-          <span className={styles.checkFill}>$350</span>
-          <span>
-            <RiCheckFill className={styles.checkFill} /> 24hs de descargas
-          </span>
-          <span>
-            <RiCheckFill className={styles.checkFill} /> 24hs de descargas
-          </span>
-          <span>
-            <RiCheckFill className={styles.checkFill} /> 24hs de descargas
-          </span>
-          <input
-            className={styles.buttonSubmit}
-            type="submit"
-            value="Comprar este plan"
-            onClick={() => handlePayment("month")}
-          />
-        </div>
-        <div className={styles.oneDay}>
-          <h4>Suscríbete por 6 meses</h4>
-          <span className={styles.checkFill}>$350</span>
-          <span>
-            <RiCheckFill className={styles.checkFill} /> 24hs de descargas
-          </span>
-          <span>
-            <RiCheckFill className={styles.checkFill} /> 24hs de descargas
-          </span>
-          <span>
-            <RiCheckFill className={styles.checkFill} /> 24hs de descargas
-          </span>
-          <input
-            className={styles.buttonSubmit}
-            type="submit"
-            value="Comprar este plan"
-            onClick={() => handlePayment("year")}
-          />
-        </div>
+        <Button text="hola" customStyle={styles.buttonCustom} />
       </div>
     </div>
   );

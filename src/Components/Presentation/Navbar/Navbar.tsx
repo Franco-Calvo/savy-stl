@@ -1,12 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
+import { logoIcon } from "../Icons/icons";
 
 const Navbar: React.FC = () => {
   return (
     <div className={styles.navbar}>
-      <Link href="/" className="STL">
-        STL
+      <Link href="/" className={styles.stl}>
+        {logoIcon()}
       </Link>
       <nav className={styles.nav}>
         <Link className={styles.anchor} href="/">
