@@ -1,44 +1,63 @@
-.HomeContainer {
-  background: #191919;
-  height: 100vh;
+.homeContainer {
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.containerCards {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
-.checkFill {
-  color: rgb(0, 60, 255);
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-.oneDay {
-  display: flex;
-  justify-content: center;
+  width: 100%;
   align-items: center;
   flex-direction: column;
-  gap: 1rem;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25), 0px 5px 10px rgba(0, 0, 0, 0.25);
-  border-radius: 40px;
-  background-color: rgb(226, 226, 226);
-  height: 20rem;
-  width: 20rem;
+  color: white;
+  margin-top: 2rem;
+  gap: 5rem;
 }
 
-.oneDay span {
+.titleContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 800px;
+  gap: 1.5rem;
+}
+
+.title {
+  display: flex;
+  font-size: 65px;
+  height: 1rem;
+}
+
+.spanTitle {
+  width: 430px;
+  line-height: 1.8;
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+
+.payContainer {
+  display: flex;
+  width: 750px;
+  padding: 0.2rem;
+  justify-content: space-around;
+  background-color: #111111;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+.pays {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: .3rem;
-}
-
-.oneDay h4{ 
-  font-size: 1.3rem;
+  width: 33%;
+  padding: 0.5rem;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  background-color: #0c0c0c;
 }

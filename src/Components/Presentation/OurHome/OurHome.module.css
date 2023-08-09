@@ -1,40 +1,77 @@
-.OurHome {
+.ourHome {
   background: rgb(245, 245, 245);
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.OurHomeContainer {
+.ourHomeContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
   width: 90%;
   flex-direction: column;
   font-size: 2.5rem;
-  gap: 2rem;
+  align-items: center;
 }
 
-.InfoOur {
+.infoOur {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
   font-size: 1.5rem;
-  gap: 0.5rem;
 }
 
-.ContenidOur {
+.contenidOur {
   width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.InfoOur img {
+.infoOur {
   display: flex;
 }
 
-.InfoOur p {
+.infoOur p {
   width: 100%;
   line-height: 30px;
   font-size: 1rem;
+}
+
+/*Media queries*/
+
+@media (max-width: 1024px) {
+  .infoOur {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .imgOur {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .titleOur {
+    font-size: 1.1rem;
+  }
 }
