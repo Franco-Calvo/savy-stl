@@ -23,3 +23,9 @@
 .buttonCard:hover {
   opacity: 0.9;
 }
+
+.buttonCustom {
+  background: red;
+  height: 20px;
+  width: 5rem;
+}
