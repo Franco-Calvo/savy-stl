@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Card.module.css";
-import Button from "../Button/Button";
+import {Button} from "../Button/Button";
 import Image from "next/image";
 
 interface CardProps {

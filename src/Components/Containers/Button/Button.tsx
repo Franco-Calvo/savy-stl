@@ -7,7 +7,7 @@ interface ButtonProps {
   customStyle?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, customStyle, onClick }) => {
+export const Button: React.FC<ButtonProps> = ({ text, customStyle, onClick }) => {
   const buttonClasses = `${styles.buttonCard} ${styles.customButton} ${customStyle}`;
 
   return (
@@ -16,3 +16,5 @@ const Button: React.FC<ButtonProps> = ({ text, customStyle, onClick }) => {
     </button>
   );
 };
+
+

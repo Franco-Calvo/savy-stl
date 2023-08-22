@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { createIcon, sendMessage } from "@/Components/Presentation/Icons/icons";
+// import { createIcon, sendMessage } from "@/Components/Presentation/Icons/icons";
 import styles from "./Hire.module.css";
 import axios from "axios";
 import { Toaster, toast } from "sonner";
@@ -104,7 +104,7 @@ export default function Page({}: Props) {
           </label>
         ) : (
           <button className={styles.createAction} onClick={toggleModal}>
-            {createIcon()}
+            {/* {createIcon()} */}
             <label>Crear ticket</label>
           </button>
         )}
@@ -137,7 +137,8 @@ export default function Page({}: Props) {
           className={styles.sendMessageBtn}
           onClick={handleSendMessageClick}
         >
-          {sendMessage()}
+          {/* {sendMessage()} */}
+          <p>Enviar</p>
         </button>
       </div>
       <Modal isOpen={isOpen} onClose={toggleModal} />
