@@ -1,15 +1,16 @@
 .adminNav {
-  height: 99vh;
+  height: 100vh;
   display: flex;
-  justify-content: flex-start;
   padding: 0.5rem;
   align-items: center;
   flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
   gap: 36rem;
   min-width: 2rem;
   background-color: #090909;
-  border: 1px solid #57576a;
-  position: relative;
+  border-right: 1px solid #57576a;
 }
 
 .back {

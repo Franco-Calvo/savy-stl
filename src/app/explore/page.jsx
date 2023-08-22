@@ -6,6 +6,7 @@ import Card from "../../Components/Containers/Card/Card";
 import useCategory from "../../Hooks/useCategory";
 import actions from "../../store/captureCards/actions";
 import styles from "./Explorer.module.css";
+import Navbar from "@/Components/Presentation/Navbar/Navbar";
 
 const { captureCards } = actions;
 
@@ -55,6 +56,8 @@ export default function Explorer() {
 
   return (
     <div className={styles.containerExplorer}>
+    <Navbar/>
+    
       <div className={styles.asideBar}>
         <div className={styles.searchBar}>
           <input
@@ -102,7 +105,6 @@ export default function Explorer() {
 
       <div className={styles.cardsContainer}>
         <div className={styles.spamCards}>asd</div>
-
         {publicCards.map((card) => (
           <Card
             key={card._id}
@@ -113,7 +115,9 @@ export default function Explorer() {
             onClick={() => downloadFile(card.fileModel)}
           />
         ))}
+        </div>
+
+        
       </div>
-    </div>
   );
 }

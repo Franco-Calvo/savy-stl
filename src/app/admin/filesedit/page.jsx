@@ -1,3 +1,4 @@
+"use client";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { RiDeleteBinFill, RiSaveFill } from "react-icons/ri";
@@ -5,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Toaster, toast } from "sonner";
 import actions from "../../../store/captureCards/actions";
 import "./FilesEdit.styles.css";
+import Image from "next/image";
 
 const { captureCards } = actions;
 
@@ -104,10 +106,12 @@ export default function FilesEdit() {
             {cards.map((card) => (
               <tr key={card._id}>
                 <td className="productImage">
-                  <img
+                  <Image
                     className="tableImage"
                     src={card.image}
                     alt={`Imagen de ${card.name}`}
+                    width={200}
+                    height={200}
                   />
                   <input
                     type="text"
