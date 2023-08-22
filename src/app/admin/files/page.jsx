@@ -6,7 +6,7 @@ import axios from "axios";
 import { Toaster, toast } from "sonner";
 import useCategory from "../../../Hooks/useCategory";
 import { uploadCloud } from "../../../Components/Presentation/Icons/icons";
-import Button from "../../../Components/Button/Button";
+import {Button} from "../../../Components/Containers/Button/Button";
 
 function formatFileSize(bytes) {
   const sizes = ["Bytes", "KB", "MB", "GB", "TB"];

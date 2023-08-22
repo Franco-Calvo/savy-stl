@@ -9,32 +9,36 @@
   top: 0;
   left: 0;
   width: 2rem;
+  gap: 38rem;
   background-color: #090909;
   border-right: 1px solid #57576a;
-  transition: width 0.5s ease-in;
 }
 
 .adminNavExpanded { 
-  width: 8rem;
+  width: 10rem;
 }
 
-.adminNav .adminText {
+.adminText {
   opacity: 0;
-  display: none;
-  transition: opacity 1s ease-in;
 }
 
-.adminNavExpanded .adminText {
-  display: inline;
+.adminText.visible {
   opacity: 1;
 }
+
+.adminText.novisible {
+  display: none;
+  transition: opacity 3s ease-in;
+
+}
+
 
 .back {
   z-index: 2;
   position: absolute;
   right: -26%;
   top: 3%;
-  transition: width 0.5s ease-in-out;
+  transition: width 0.2s ease-in-out;
   outline: none;
   border: none;
   background: transparent;
