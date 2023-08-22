@@ -54,8 +54,11 @@
   width: 200px;
   height: 3rem;
   cursor: pointer;
-  font-size: 1rem;
   text-decoration: none;
+}
+
+.gradientButton:hover, .alternativeButton:hover{
+  opacity: 0.8;
 }
 
 .alternativeButton {
@@ -65,6 +68,7 @@
   background: none;
   width: 200px;
   cursor: pointer;
+  font-size: 1rem;
 }
 
 .containerImg {

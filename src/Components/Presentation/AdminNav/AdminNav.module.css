@@ -1,24 +1,47 @@
 .adminNav {
-  height: 99vh;
+  height: 100vh;
   display: flex;
-  justify-content: flex-start;
   padding: 0.5rem;
   align-items: center;
   flex-direction: column;
-  gap: 36rem;
-  min-width: 2rem;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 2rem;
   background-color: #090909;
-  border: 1px solid #57576a;
-  position: relative;
+  border-right: 1px solid #57576a;
+  transition: width 0.5s ease-in;
+}
+
+.adminNavExpanded { 
+  width: 8rem;
+}
+
+.adminNav .adminText {
+  opacity: 0;
+  display: none;
+  transition: opacity 1s ease-in;
+}
+
+.adminNavExpanded .adminText {
+  display: inline;
+  opacity: 1;
 }
 
 .back {
-  background-color: #090909;
   z-index: 2;
   position: absolute;
   right: -26%;
   top: 3%;
+  transition: width 0.5s ease-in-out;
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
+
+
 
 .navTop {
   margin-top: 5rem;

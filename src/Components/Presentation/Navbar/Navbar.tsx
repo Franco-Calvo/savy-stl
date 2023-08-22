@@ -1,13 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
-import { logoIcon } from "../Icons/icons";
+import { svgLogoIcon } from "../Icons/icons";
 
 const Navbar: React.FC = () => {
   return (
     <div className={styles.navbar}>
       <Link href="/" className={styles.stl}>
-        {logoIcon()}
+        {svgLogoIcon()}
       </Link>
       <nav className={styles.nav}>
         <Link className={styles.anchor} href="/">
