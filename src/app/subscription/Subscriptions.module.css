@@ -25,6 +25,7 @@
 .spanTitle {
   width: 430px;
   line-height: 1.8;
+  text-align: center;
 }
 
 .cardsContainer {
@@ -60,4 +61,9 @@
   -ms-border-radius: 50px;
   -o-border-radius: 50px;
   background-color: #0c0c0c;
+  cursor: pointer;
+}
+
+.pays:hover {
+  background-color: #303030;
 }

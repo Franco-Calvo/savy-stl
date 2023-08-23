@@ -3,7 +3,7 @@ import React from "react";
 import { svgIcon } from "@/Components/Presentation/Icons/icons";
 import Image from "next/image";
 import styles from "./CardSubscriptions.module.css";
-import Button from "@/Components/Containers/Button/Button";
+import { Button } from "@/Components/Containers/Button/Button";
 
 export default function CardSubscriptions({ title, price }) {
   return (

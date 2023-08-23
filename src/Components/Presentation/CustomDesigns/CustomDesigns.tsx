@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer";
 
 export default function CustomDesigns() {
   return (
-    <div className={styles.customDesigns}>
+    <div className={styles.customDesigns} id="customDesigns">
       <h3>
         Diseños únicos <span className={styles.customTitle}>a medida</span>
       </h3>

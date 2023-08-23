@@ -1,13 +1,13 @@
-import axios from "axios";
-import React from "react";
-import { RiCheckFill } from "react-icons/ri";
-import styles from "./Subscriptions.module.css";
+"use client";
 import CardSubscriptions from "@/Components/Containers/CardSubscriptions/CardSubscriptions";
 import {
-  svgMp,
   svgCryptoFast,
+  svgMp,
   svgPaypal,
 } from "@/Components/Presentation/Icons/icons";
+import axios from "axios";
+import React from "react";
+import styles from "./Subscriptions.module.css";
 
 interface SubscriptionsProps {}
 

@@ -4,7 +4,7 @@ import { svgCohete } from "../Icons/icons";
 
 const OurHome: React.FC = () => {
   return (
-    <div className={styles.ourHome}>
+    <div className={styles.ourHome} id="ourHome">
       <div className={styles.ourHomeContainer}>
         <div className={styles.title}>
           <h2>Innovando en el mundo 3D</h2>

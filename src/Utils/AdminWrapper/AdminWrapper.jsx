@@ -2,9 +2,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ErrorPage from "@/Components/Presentation/ErrorPage/ErrorPage";
+import Loader from "@/Components/Presentation/Loader/Loader";
 
 const AdminLayoutWrapper = ({ children }) => {
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(null);
 
   useEffect(() => {
     const verifyToken = async () => {
@@ -31,7 +32,13 @@ const AdminLayoutWrapper = ({ children }) => {
     verifyToken();
   }, []);
 
-  if (isAdmin) {
+  if (isAdmin === null) {
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
+  } else if (isAdmin) {
     return <div>{children}</div>;
   } else {
     return (

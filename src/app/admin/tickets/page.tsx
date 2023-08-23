@@ -1,12 +1,26 @@
-import React from "react";
+"use client"
+import React, {useState} from "react";
 import styles from "./Tickets.module.css";
 import {
   svgAccept,
   svgDecline,
   svgEnviar,
 } from "@/Components/Presentation/Icons/icons";
+import { formatTime } from "@/Intercerptors/FormattedTime";
+
 
 export default function page() {
+
+  const [message, setMessage] = useState<string>("")
+  const [ticketData, setTicketData] = useState<any>(null);
+  const [ticketId, setTicketId] = useState<any>(null);
+  const [messageData, setMessageData] = useState<any>(null);
+  const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+
+  
+
+
+
   return (
     <div className={styles.hire}>
       <div className={styles.budget}>

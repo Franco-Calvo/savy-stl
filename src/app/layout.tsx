@@ -1,3 +1,5 @@
+"use client";
+import React, { useEffect, useState } from "react";
 import Navbar from "@/Components/Presentation/Navbar/Navbar";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -16,15 +18,24 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [showNavbar, setShowNavbar] = useState(true);
+
+  useEffect(() => {
+    if (window.location.pathname.includes("/admin")) {
+      setShowNavbar(false);
+    } else {
+      setShowNavbar(true);
+    }
+  }, []);
+
   return (
     <html lang="en">
       <body className="background">
         <ReduxProvider>
-          {/* <Navbar /> */}
+          {showNavbar && <Navbar />}
           {children}
         </ReduxProvider>
       </body>
     </html>
   );
-  
 }
