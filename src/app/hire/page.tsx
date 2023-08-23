@@ -1,11 +1,12 @@
 "use client";
 import React, { useState, useEffect } from "react";
-// import { createIcon, sendMessage } from "@/Components/Presentation/Icons/icons";
+import {  svgEnviar } from "@/Components/Presentation/Icons/icons";
 import styles from "./Hire.module.css";
 import axios from "axios";
 import { Toaster, toast } from "sonner";
 import Modal from "@/Components/Containers/ModalTicket/ModalTicket";
 import MessageByUser from "@/Components/Containers/Messages/MessageByUser";
+import { formatTime } from "@/Intercerptors/FormattedTime";
 
 interface Props {}
 
@@ -25,16 +26,6 @@ export default function Page({}: Props) {
   const toggleModal = () => {
     setIsOpen(!isOpen);
   };
-
-  function formatTime(dateTimeString: string) {
-    const date = new Date(dateTimeString);
-    const hours = date.getHours();
-    const minutes = date.getMinutes();
-
-    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
-
-    return `${hours}:${formattedMinutes}`;
-  }
 
   async function checkTicketExists() {
     if (userID) {
@@ -92,8 +83,6 @@ export default function Page({}: Props) {
     }
   }
 
-  console.log(messageData);
-
   return (
     <div className={styles.hire}>
       <Toaster position="top-right" />
@@ -137,7 +126,7 @@ export default function Page({}: Props) {
           className={styles.sendMessageBtn}
           onClick={handleSendMessageClick}
         >
-          {/* {sendMessage()} */}
+          {svgEnviar()}
           <p>Enviar</p>
         </button>
       </div>

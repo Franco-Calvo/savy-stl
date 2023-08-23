@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import styles from "./ErrorPage.module.css";
@@ -25,10 +26,7 @@ const ErrorPage: React.FC<ErrorPageProps> = ({
             width={400}
             height={400}
           />
-          <Link
-            href="http://salehriaz.com/404Page/404.html"
-            className={styles.btnGoHome}
-          >
+          <Link href="/" className={styles.btnGoHome}>
             {button}
           </Link>
         </div>

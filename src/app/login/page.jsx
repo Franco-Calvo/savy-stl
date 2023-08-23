@@ -36,12 +36,13 @@ export default function Login() {
           name: res.data.user.name,
           last_name: res.data.user.last_name,
           email: res.data.user.email,
+          is_online: res.data.user.is_online,
         })
       );
       toast.success(res.data.message);
       setTimeout(() => {
-        router.push("/");
-      }, 3000);
+        window.location.href = "/";
+      }, 2000);
     } catch (error) {
       toast.error(error?.res?.data?.message);
       console.log(error);

@@ -5,7 +5,7 @@ import { imgAstronaut } from "../Icons/icons";
 
 export default function IndexHome() {
   return (
-    <div className={styles.home}>
+    <div className={styles.home} id="home">
       <div className={styles.containerPrincipal}>
         <div className={styles.containerSecundario}>
           <h1 className={styles.principalTitle}>Busca, descarga e imprime</h1>
