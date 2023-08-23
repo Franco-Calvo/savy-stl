@@ -6,7 +6,7 @@ import axios from "axios";
 import { Toaster, toast } from "sonner";
 import useCategory from "../../../Hooks/useCategory";
 import { uploadCloud } from "../../../Components/Presentation/Icons/icons";
-import Button from "../../../Components/Button/Button";
+import { Button } from "../../../Components/Containers/Button/Button";
 
 function formatFileSize(bytes) {
   const sizes = ["Bytes", "KB", "MB", "GB", "TB"];
@@ -86,95 +86,122 @@ export default function Files() {
     <div className="adminpanel">
       <div className="adminFiles">
         <Toaster position="top-right" />
-        <input
-          className="categorySelect"
-          type="text"
-          value={name}
-          onChange={handleNameChange}
-          placeholder="Nombre"
-        />
-        <input
-          type="text"
-          className="categorySelect"
-          value={description}
-          onChange={handleDescriptionChange}
-          placeholder="Descripción"
-        />
-        <div className="categories">
-          {loading ? (
-            <p>Loading...</p>
-          ) : error ? (
-            <p>Error</p>
-          ) : (
-            <>
-              <select
-                className="categorySelect"
-                value={selectedCategory}
-                onChange={handleChange}
-              >
-                <option className="categoryOption" value="">
-                  Categorías disponibles
-                </option>
-                {filteredCategories.map((cat) => (
-                  <option className="" key={cat._id} value={cat.name}>
-                    {cat.name}
-                  </option>
-                ))}
+        <div className="containerSelect">
+          <select
+            className="categorySelect"
+            value={selectedCategory}
+            onChange={handleChange}
+          >
+            <option className="categoryOption" value="">
+              Categorías disponibles
+            </option>
+            {filteredCategories.map((cat) => (
+              <option className="" key={cat._id} value={cat.name}>
+                {cat.name}
+              </option>
+            ))}
+          </select>
+          <input
+            type="text"
+            className="categorySelect"
+            value={description}
+            onChange={handleDescriptionChange}
+            placeholder="Nombre de la categoría"
+          ></input>
+        </div>
+
+        <div className="containerUpload">
+          <div className="asd">
+            <div
+              className="dashedContainer"
+              onClick={() => fileInputRef.current.click()}
+            >
+              <span>
+                {uploadCloud()}
+                <p className="uploadFiles">Subir archivo</p>
+                <p className="maxSize">Max 10MB</p>
+                <p className="fileName">
+                  {selectedFileName ? formatFileSize(selectedFileName) : ""}
+                </p>
+              </span>
+              <input
+                type="file"
+                ref={fileInputRef}
+                name="file"
+                style={{ display: "none" }}
+                onChange={handleFileSelect}
+              />
+            </div>
+
+            <div
+              className="dashedContainer"
+              onClick={() => imageInputRef.current.click()}
+            >
+              <span>
+                {uploadCloud()}
+                <p className="uploadFiles">Subir imagen</p>
+                <p className="maxSize">Max 1MB</p>
+                <p className="fileName">
+                  {selectedImageName ? formatFileSize(selectedImageName) : ""}
+                </p>
+              </span>
+              <input
+                type="file"
+                name="image"
+                ref={imageInputRef}
+                style={{ display: "none" }}
+                onChange={handleImageSelect}
+              />
+            </div>
+          </div>
+
+          <div className="containerCatSelect">
+            <div className="catInput">
+              <input placeholder="Título de la publicación"></input>
+              <input placeholder="Descripción de la publicación"></input>
+            </div>
+            <div className="categories">
+              {loading ? (
+                <p>Loading...</p>
+              ) : error ? (
+                <p>Error</p>
+              ) : (
+                <>
+                  <select
+                    className="categorySelect"
+                    value={selectedCategory}
+                    onChange={handleChange}
+                  >
+                    <option className="categoryOption" value="">
+                      Categorías disponibles
+                    </option>
+                    {filteredCategories.map((cat) => (
+                      <option className="" key={cat._id} value={cat.name}>
+                        {cat.name}
+                      </option>
+                    ))}
+                  </select>
+                </>
+              )}
+
+              <select>
+                <option value="Público">Público</option>
+                <option value="Privado">Privado</option>
               </select>
-            </>
-          )}
-        </div>
+            </div>
+          </div>
 
-        <div
-          className="dashedContainer"
-          onClick={() => fileInputRef.current.click()}
-        >
-          <span>
-            {uploadCloud()}
-            <p className="uploadFiles">Subir archivo</p>
-            <p className="maxSize">Max 10MB</p>
-            <p className="fileName">
-              {selectedFileName ? formatFileSize(selectedFileName) : ""}
-            </p>
+          <span className="containerButton">
+            <Button className="asdd" text="Subir" onClick={handleUpload} />
           </span>
-          <input
-            type="file"
-            ref={fileInputRef}
-            name="file"
-            style={{ display: "none" }}
-            onChange={handleFileSelect}
-          />
-        </div>
 
-        <div
-          className="dashedContainer"
-          onClick={() => imageInputRef.current.click()}
-        >
-          <span>
-            {uploadCloud()}
-            <p className="uploadFiles">Subir imagen</p>
-            <p className="maxSize">Max 1MB</p>
-            <p className="fileName">
-              {selectedImageName ? formatFileSize(selectedImageName) : ""}
-            </p>
-          </span>
-          <input
-            type="file"
-            name="image"
-            ref={imageInputRef}
-            style={{ display: "none" }}
-            onChange={handleImageSelect}
-          />
+          <div className="progress-bar-container">
+            <div
+              className="progress-bar"
+              style={{ width: `${uploadProgress}%` }}
+            ></div>
+          </div>
         </div>
-        <div className="progress-bar-container">
-          <div
-            className="progress-bar"
-            style={{ width: `${uploadProgress}%` }}
-          ></div>
-        </div>
-        <span className="containerButton">
-          <Button text="Subir" onClick={handleUpload} />
-        </span>
       </div>
     </div>
   );

@@ -4,22 +4,48 @@
   padding: 0.5rem;
   align-items: center;
   flex-direction: column;
+  justify-content: flex-start;
   position: fixed;
   top: 0;
   left: 0;
-  gap: 36rem;
-  min-width: 2rem;
+  width: 2rem;
+  gap: 38rem;
   background-color: #090909;
   border-right: 1px solid #57576a;
 }
 
+.adminNavExpanded { 
+  width: 10rem;
+}
+
+.adminText {
+  opacity: 0;
+}
+
+.adminText.visible {
+  opacity: 1;
+}
+
+.adminText.novisible {
+  display: none;
+  transition: opacity 3s ease-in;
+
+}
+
+
 .back {
-  background-color: #090909;
   z-index: 2;
   position: absolute;
   right: -26%;
   top: 3%;
+  transition: width 0.2s ease-in-out;
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
+
+
 
 .navTop {
   margin-top: 5rem;

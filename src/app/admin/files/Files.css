@@ -31,8 +31,53 @@
   position: relative;
 }
 
+.containerSelect {
+  margin-top: 3rem;
+  display: flex;
+  gap: 10rem;
+  width: 90%;
+  background: #0c0c0c;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  outline: 1px solid #1a1a1a;
+}
+
+.containerSelect input,
+.catInput input,
+.categories select {
+  background-color: #1a1a1a;
+  padding: 1.2rem 1rem;
+  width: 300px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  outline: 1px solid #3f3f3f;
+  border: none;
+  color: white;
+  font-size: 1rem;
+}
+
+.containerSelect input::placeholder {
+  text-align: center;
+  color: white;
+  font-size: 16px;
+}
+
 .dashedContainer:hover {
   background: rgba(0, 128, 220, 0.18);
+}
+
+.dashedContainer {
+  width: 300px;
+  height: 300px;
 }
 
 .dashedContainer span {
@@ -63,7 +108,10 @@ input[type="file"] {
 }
 
 .containerButton {
-  width: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20rem;
 }
 
 .maxSize {
@@ -76,13 +124,13 @@ input[type="file"] {
 
 .fileName {
   font-size: 10px;
-  padding: .2rem;
+  padding: 0.2rem;
   text-align: center;
 }
 
 .progress-bar-container {
-  width: 12rem;
-  height: 5px;
+  width: 550px;
+  height: 8px;
   background-color: #f0f0f0;
   border-radius: 5px;
   margin-top: 10px;
@@ -93,4 +141,69 @@ input[type="file"] {
   background-color: #3b39d8;
   border-radius: 5px;
   transition: width 0.3s;
+}
+
+.containerUpload {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  height: 780px;
+  background-color: #0c0c0c;
+  outline: 1px solid #1a1a1a;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  gap: 3rem;
+}
+
+.asd {
+  display: flex;
+  gap: 2rem;
+}
+
+.containerCatSelect {
+  display: flex;
+  width: 600px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.catInput,
+.categories {
+  display: flex;
+  gap: 4rem;
+}
+
+.catInput input {
+  width: 242px;
+  padding: 0.5rem 0.8rem;
+  height: 25px;
+}
+
+.categories select {
+  width: 268px;
+  height: 40px;
+  padding: 0 1rem;
+}
+
+.containerSelect select {
+  width: 320px;
+  height: 55px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: white;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  outline: 1px solid #3f3f3f;
+  background-color: #1a1a1a;
+  border: none;
 }

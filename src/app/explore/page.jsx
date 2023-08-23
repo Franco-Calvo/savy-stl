@@ -10,6 +10,10 @@ import Navbar from "@/Components/Presentation/Navbar/Navbar";
 
 const { captureCards } = actions;
 
+document.querySelector('.categoryLabel').addEventListener('click', function(event) {
+  event.target.classList.toggle('selected');
+});
+
 export default function Explorer() {
   const { categories } = useCategory();
   const [filterOptions, setFilterOptions] = useState({
