@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Card.module.css";
-import {Button} from "../Button/Button";
+import { Button } from "../Button/Button";
 import Image from "next/image";
 
 interface CardProps {
@@ -30,18 +30,19 @@ const Card: React.FC<CardProps> = ({
         />
       </div>
 
-      <div className={styles.cardBody}>        
-          <h2>{title}</h2>
-          <p>{description}</p>
+      <div className={styles.cardBody}>
+        <h2>{title}</h2>
+        <p>{description}</p>
+
+        <span className={styles.containerDownload}>
+          <Button
+            text={text}
+            customStyle={styles.buttonCard}
+            onClick={onClick}
+          />
+        </span>
       </div>
-        
-      <span className={styles.containerDownload}>
-          <Button text={text} customStyle={styles.buttonCard} onClick={onClick} />
-      </span>
     </div>
-
-
-        
   );
 };
 
