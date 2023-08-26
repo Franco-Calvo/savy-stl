@@ -1,23 +1,25 @@
-// En el archivo donde se encuentra el componente MessageByAdmin
+// MessageByUser.tsx
+
 import React from "react";
 import styles from "./Messages.module.css";
 
-interface Message {
-  _id: string;
-  ticketId: string;
+interface MessageProps {
   author: string;
   text: string;
-  createdAt: string;
-  updatedAt: string;
-  __v: number;
+  time: any;
 }
 
-interface MessageByAdminProps {
-  message: Message;
-}
-
-const MessageByAdmin: React.FC<MessageByAdminProps> = ({ message }) => {
-  return <label className={styles.messageByAdmin}>{message.text}</label>;
+const MessageByAdmin: React.FC<MessageProps> = ({ author, text, time }) => {
+  return (
+    <div
+      className={`${styles.message} ${
+        author === "admin" ? styles.userMessage : styles.otherMessage
+      }`}
+    >
+      <div className={styles.messageText}>{text}</div>
+      <div className={styles.messageTime}>{time}</div>
+    </div>
+  );
 };
 
 export default MessageByAdmin;

@@ -2,16 +2,28 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   flex-direction: column;
   gap: 10px;
+}
+
+.chatContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  height: 100vh;
+  flex-direction: column;
+  gap: 10px;
+  margin-right: 21rem;
 }
 
 .budget {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
   background: #0c0c0c;
   border: 1px solid #1a1a1a;
   width: 60%;
@@ -173,4 +185,49 @@
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+.ticketsContainer {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  right: 0;
+  width: 20%;
+  border-left: 1px solid #3f3f3f;
+  height: 100%;
+  gap: 1rem;
+}
+
+.ticketsContainer h3 {
+  color: white;
+}
+
+.containerPagination {
+  color: white;
+  display: flex;
+  gap: 10px;
+  padding: 0.5rem;
+}
+
+.noMessages {
+  color: white;
+  padding-right: 1rem;
+}
+
+.buttonPagination {
+  background: linear-gradient(90deg, #0c79dd 0%, #4200ff 100%);
+  color: white;
+  border: none;
+  outline: none;
+  height: 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.numPagination {
+  color: #185bc3;
+  font-weight: 600;
 }

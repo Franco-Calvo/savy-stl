@@ -1,4 +1,5 @@
 "use client";
+import Navbar from "@/Components/Presentation/Navbar/Navbar";
 import React, { useEffect, useRef, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
@@ -6,8 +7,6 @@ import Card from "../../Components/Containers/Card/Card";
 import useCategory from "../../Hooks/useCategory";
 import actions from "../../store/captureCards/actions";
 import styles from "./Explorer.module.css";
-import Navbar from "@/Components/Presentation/Navbar/Navbar";
-import { ModalSupport } from "@/Components/Presentation/ModalSupport/ModalSupport";
 
 const { captureCards } = actions;
 
@@ -33,7 +32,6 @@ export default function Explorer() {
   };
 
   const cards = useSelector((store) => store.cardsReducer.cards);
-  console.log(cards);
   const publicCards = cards.filter((card) => card.status === "public");
 
   const dispatch = useDispatch();
@@ -57,7 +55,6 @@ export default function Explorer() {
 
   return (
     <div className={styles.containerExplorer}>
-      {/* <ModalSupport /> */}
 
       <Navbar />
 
