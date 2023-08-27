@@ -207,3 +207,24 @@ input[type="file"] {
   background-color: #1a1a1a;
   border: none;
 }
+
+.spanIconContainer {
+  position: relative;
+}
+
+.spanIcon {
+  position: absolute;
+  top: 20%;
+  right: -4.5%;
+  border-radius: 5px;
+  background-color: #1a1a1a;
+  outline: 1px solid #3f3f3f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4rem;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}

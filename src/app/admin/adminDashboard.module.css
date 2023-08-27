@@ -9,12 +9,13 @@
 .cardContainer {
   display: flex;
   margin-top: 5rem;
-  justify-content: space-around;
   align-items: center;
-  width: 96%;
-  height: 120px;
+  width: 100%;
+  min-height: 120px;
   flex-wrap: wrap;
-  gap: 1rem;
+  margin-left: 8rem;
+  align-items: center;
+  gap: 2rem;
 }
 
 .pagesVisited {

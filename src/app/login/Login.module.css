@@ -6,7 +6,24 @@
   align-items: center;
   height: 100vh;
   gap: 2rem;
-  position: relative;
+  width: 100%;
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.inputContainer input {
+  border: none;
+  border: 2px solid #30303d;
+  color: rgba(255, 255, 255, 0.589);
+  padding: 0.5rem;
+  background: transparent;
+  width: 92%;
+  height: 2.5rem;
+  border-radius: 10px;
 }
 
 .inputContainer input::placeholder {
@@ -53,18 +70,21 @@
   align-items: center;
   flex-direction: column;
   gap: 0.3rem;
+  position: relative;
 }
 
 .circleGradient {
   position: absolute;
   top: 0;
   left: 25rem;
+  z-index: -2;
 }
 
 .circleGradientCopy {
   position: absolute;
   top: 10rem;
   right: 35rem;
+  z-index: -2;
 }
 
 .circleGradient:hover {
@@ -92,4 +112,35 @@
 
 .bouncingCircle {
   animation: bounce 3s infinite;
+}
+
+.formasd {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.buttonSubmit {
+  background: linear-gradient(90deg, #0c79dd 0%, #4200ff 100%);
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 15rem;
+  height: 2.5rem;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.buttonSubmit:hover {
+  background: linear-gradient(90deg, #0b69c2 0%, #3c02dd 100%);
+  box-shadow: inset;
+}
+
+@media (max-width: 768px) {
+  .circleGradient,
+  .circleGradientCopy {
+    display: none;
+  }
 }

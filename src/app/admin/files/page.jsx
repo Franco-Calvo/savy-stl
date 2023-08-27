@@ -5,7 +5,11 @@ import "./Files.css";
 import axios from "axios";
 import { Toaster, toast } from "sonner";
 import useCategory from "../../../Hooks/useCategory";
-import { uploadCloud } from "../../../Components/Presentation/Icons/icons";
+import {
+  svgEliminar,
+  svgEnviado,
+  uploadCloud,
+} from "../../../Components/Presentation/Icons/icons";
 import { Button } from "../../../Components/Containers/Button/Button";
 
 function formatFileSize(bytes) {
@@ -87,27 +91,34 @@ export default function Files() {
       <div className="adminFiles">
         <Toaster position="top-right" />
         <div className="containerSelect">
-          <select
-            className="categorySelect"
-            value={selectedCategory}
-            onChange={handleChange}
-          >
-            <option className="categoryOption" value="">
-              Categorías disponibles
-            </option>
-            {filteredCategories.map((cat) => (
-              <option className="" key={cat._id} value={cat.name}>
-                {cat.name}
+          <span className="spanIconContainer">
+            <select
+              className="categorySelect"
+              value={selectedCategory}
+              onChange={handleChange}
+            >
+              <option className="categoryOption" value="">
+                Categorías disponibles
               </option>
-            ))}
-          </select>
-          <input
-            type="text"
-            className="categorySelect"
-            value={description}
-            onChange={handleDescriptionChange}
-            placeholder="Nombre de la categoría"
-          ></input>
+              {filteredCategories.map((cat) => (
+                <option className="" key={cat._id} value={cat.name}>
+                  {cat.name}
+                </option>
+              ))}
+            </select>
+
+            <span className="spanIcon">{svgEliminar()}</span>
+          </span>
+
+          <span className="spanIconContainer">
+            <input
+              type="text"
+              className="categorySelect"
+              onChange={handleDescriptionChange}
+              placeholder="Nombre de la categoría"
+            />
+            <span className="spanIcon">{svgEnviado()}</span>
+          </span>
         </div>
 
         <div className="containerUpload">
@@ -157,8 +168,16 @@ export default function Files() {
 
           <div className="containerCatSelect">
             <div className="catInput">
-              <input placeholder="Título de la publicación"></input>
-              <input placeholder="Descripción de la publicación"></input>
+              <input
+                placeholder="Título de la publicación"
+                value={name}
+                onChange={handleNameChange}
+              />
+              <input
+                placeholder="Descripción de la publicación"
+                value={description}
+                onChange={handleDescriptionChange}
+              />
             </div>
             <div className="categories">
               {loading ? (
@@ -196,6 +215,7 @@ export default function Files() {
           </span>
 
           <div className="progress-bar-container">
+            <span>Cargando.-.</span>
             <div
               className="progress-bar"
               style={{ width: `${uploadProgress}%` }}

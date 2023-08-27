@@ -10,10 +10,6 @@ import Navbar from "@/Components/Presentation/Navbar/Navbar";
 
 const { captureCards } = actions;
 
-document.querySelector('.categoryLabel').addEventListener('click', function(event) {
-  event.target.classList.toggle('selected');
-});
-
 export default function Explorer() {
   const { categories } = useCategory();
   const [filterOptions, setFilterOptions] = useState({
@@ -60,8 +56,8 @@ export default function Explorer() {
 
   return (
     <div className={styles.containerExplorer}>
-    <Navbar/>
-    
+      <Navbar />
+
       <div className={styles.asideBar}>
         <div className={styles.searchBar}>
           <input
@@ -102,26 +98,28 @@ export default function Explorer() {
         </div>
 
         <div className={styles.spamContainer}>
-          <div className={styles.spamBox}>asd</div>
-          <div className={styles.spamBox}>asd</div>
+          <div className={`${styles.spamCards}`}>asd</div>
+          <div className={`${styles.spamCards}`}>asd</div>
         </div>
       </div>
 
       <div className={styles.cardsContainer}>
-        <div className={styles.spamCards}>asd</div>
-        {publicCards.map((card) => (
-          <Card
-            key={card._id}
-            title={card.name}
-            description={card.description}
-            image={card.image}
-            text="Descargar"
-            onClick={() => downloadFile(card.fileModel)}
-          />
-        ))}
+        <div className={`${styles.spamCards} ${styles.spamCardRemove}`}>
+          asd
         </div>
-
-        
+        <div className={styles.cardsBox}>
+          {publicCards.map((card) => (
+            <Card
+              key={card._id}
+              title={card.name}
+              description={card.description}
+              image={card.image}
+              text="Descargar"
+              onClick={() => downloadFile(card.fileModel)}
+            />
+          ))}
+        </div>
       </div>
+    </div>
   );
 }

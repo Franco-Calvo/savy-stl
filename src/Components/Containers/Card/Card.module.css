@@ -31,7 +31,7 @@
   display: flex;
   overflow: hidden;
   width: 100%;
- 
+  object-fit: cover;
 }
 
 .cardPicture {
@@ -67,3 +67,4 @@
   justify-content: center;
   width: 80%;
 }
+
