@@ -9,8 +9,12 @@
   color: white;
 }
 
+.adminFiles {
+  width: 70%;
+}
+
 .tableBody {
-  width: 80%;
+  width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
   background: rgb(19, 19, 19);

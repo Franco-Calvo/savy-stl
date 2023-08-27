@@ -55,7 +55,6 @@ export default function Explorer() {
 
   return (
     <div className={styles.containerExplorer}>
-
       <Navbar />
 
       <div className={styles.asideBar}>
@@ -98,23 +97,27 @@ export default function Explorer() {
         </div>
 
         <div className={styles.spamContainer}>
-          <div className={styles.spamBox}>Publicite aquí</div>
-          <div className={styles.spamBox}>Publicite aquí</div>
+          <div className={`${styles.spamCards}`}>asd</div>
+          <div className={`${styles.spamCards}`}>asd</div>
         </div>
       </div>
 
       <div className={styles.cardsContainer}>
-        <div className={styles.spamCards}>Publicite aquí</div>
-        {publicCards.map((card) => (
-          <Card
-            key={card._id}
-            title={card.name}
-            description={card.description}
-            image={card.image}
-            text="Descargar"
-            onClick={() => downloadFile(card.fileModel)}
-          />
-        ))}
+        <div className={`${styles.spamCards} ${styles.spamCardRemove}`}>
+          asd
+        </div>
+        <div className={styles.cardsBox}>
+          {publicCards.map((card) => (
+            <Card
+              key={card._id}
+              title={card.name}
+              description={card.description}
+              image={card.image}
+              text="Descargar"
+              onClick={() => downloadFile(card.fileModel)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

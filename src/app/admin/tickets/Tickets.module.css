@@ -26,7 +26,7 @@
   flex-direction: column;
   background: #0c0c0c;
   border: 1px solid #1a1a1a;
-  width: 60%;
+  width: 100%;
   height: 2rem;
   font-size: 18px;
   border-radius: 8px;
@@ -95,7 +95,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 60%;
+  width: 100%;
   height: 2rem;
   padding: 0.5rem;
   background: #0c0c0c;
@@ -128,9 +128,8 @@
   border: 1px solid #1a1a1a;
   border-radius: 8px;
   height: 60%;
-  width: 60%;
+  width: 100%;
   padding: 0.5rem;
-  position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;

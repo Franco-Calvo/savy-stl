@@ -52,7 +52,7 @@ export default function Register() {
       <Toaster position="top-right" />
       <h3>Bienvenido a nuestra comunidad</h3>
 
-      <div className={styles.circleGradient && styles.bouncingCircle}>
+      <div className={`${styles.circleGradient} ${styles.bouncingCircle}`}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="256"
@@ -83,7 +83,7 @@ export default function Register() {
           </defs>
         </svg>
       </div>
-      <div className={styles.circleGradientCopy && styles.bouncingCircle}>
+      <div className={`${styles.circleGradientCopy} ${styles.bouncingCircle}`}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="138"
