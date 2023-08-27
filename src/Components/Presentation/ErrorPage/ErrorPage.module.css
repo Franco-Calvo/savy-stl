@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Dosis:300,400,500");
-
 @-moz-keyframes rocketMovement {
   100% {
     -moz-transform: translate(1200px, -600px);
@@ -18,20 +16,20 @@
 @-moz-keyframes spinEarth {
   100% {
     -moz-transform: rotate(-360deg);
-    transition: transform 20s;
+    transition: transform 2s;
   }
 }
 @-webkit-keyframes spinEarth {
   100% {
     -webkit-transform: rotate(-360deg);
-    transition: transform 20s;
+    transition: transform 2s;
   }
 }
 @keyframes spinEarth {
   100% {
     -webkit-transform: rotate(-360deg);
     transform: rotate(-360deg);
-    transition: transform 20s;
+    transition: transform 2s;
   }
 }
 
@@ -109,7 +107,7 @@
 }
 
 .bgPurple {
-  background: url(http://salehriaz.com/404Page/img/bg_purple.png);
+  background: #010101;
   background-repeat: repeat-x;
   background-size: cover;
   background-position: left top;
@@ -123,8 +121,10 @@
   margin: 15px auto;
   width: 100px;
   padding: 10px 15px;
-  border: 1px solid #ffcb39;
+  border: none;
+  background: linear-gradient(90deg, #0c79dd 0%, #4200ff 100%);
   border-radius: 100px;
+  font-family: "Inter";
   font-weight: 400;
   display: block;
   color: white;
@@ -141,7 +141,8 @@
 }
 
 .btnGoHome:hover {
-  background-color: #ffcb39;
+  background: linear-gradient(90deg, #0b6dc9 0%, #5d25f5 100%);
+
   color: #fff;
   transform: scale(1.05);
   box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);

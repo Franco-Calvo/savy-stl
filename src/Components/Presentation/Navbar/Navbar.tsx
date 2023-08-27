@@ -3,15 +3,30 @@ import React, { useState, useEffect } from "react";
 import { svgLogoIcon } from "../Icons/icons";
 import styles from "./Navbar.module.css";
 import { signOut } from "@/Intercerptors/authService";
+import axios from "axios";
+import { toast, Toaster } from "sonner";
 
 const Navbar: React.FC = () => {
   const [isLogged, setIsLogged] = useState(false);
 
   const handleSignOut = async () => {
+    const token = localStorage.getItem("token");
+
     try {
-      await signOut();
-      localStorage.removeItem("user");
-      window.location.href = "/";
+      const response = await axios.post(
+        "http://localhost:8000/auth/signout",
+        { is_online: false },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      if (response.status === 200 || response.status === 201) {
+        await signOut();
+        localStorage.clear();
+        window.location.href = "/";
+        toast.success("Deslogueado con éxito");
+      } else {
+        console.error("Error al desloguearse", response.data);
+      }
     } catch (err) {
       console.log(err);
     }
@@ -42,6 +57,7 @@ const Navbar: React.FC = () => {
 
   return (
     <div className={styles.navbar}>
+      <Toaster position="top-right" />
       <Link href="/" className={styles.stl}>
         {/* {svgLogoIcon()} */}
       </Link>

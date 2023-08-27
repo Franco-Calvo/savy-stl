@@ -32,7 +32,6 @@
 
 }
 
-
 .back {
   z-index: 2;
   position: absolute;
@@ -44,8 +43,6 @@
   background: transparent;
   cursor: pointer;
 }
-
-
 
 .navTop {
   margin-top: 5rem;

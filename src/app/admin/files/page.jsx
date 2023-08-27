@@ -74,7 +74,6 @@ export default function Files() {
           setUploadProgress(progress);
         },
       });
-
       setUploadProgress(0);
       toast.success(response.data.message);
     } catch (error) {

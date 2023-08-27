@@ -6,7 +6,7 @@ import styles from "./Messages.module.css"; // Asegúrate de importar tus estilo
 interface MessageProps {
   author: string;
   text: string;
-  time: string;
+  time: any;
 }
 
 const MessageByUser: React.FC<MessageProps> = ({ author, text, time }) => {

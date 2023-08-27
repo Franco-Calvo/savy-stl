@@ -26,13 +26,13 @@ const AdminNav: React.FC = () => {
         <Link href="/admin/categories">
           {svgNavCub()} <span className={`${styles.adminText} ${isExpanded ? styles.visible : styles.novisible}`}>Categorías</span>
         </Link>
-        <Link href="/admin/upload">
+        <Link href="/admin/files">
           {svgHeart()} <span className={`${styles.adminText} ${isExpanded ? styles.visible : styles.novisible}`}>Archivos</span>
         </Link>
         <Link href="/">
           {svgCrown()} <span className={`${styles.adminText} ${isExpanded ? styles.visible : styles.novisible}`}>Estadísticas</span>
         </Link>
-        <Link href="/">
+        <Link href="/admin/tickets">
           {svgMessage()} <span className={`${styles.adminText} ${isExpanded ? styles.visible : styles.novisible}`}>Tickets</span>
         </Link>
         <Link href="/">
