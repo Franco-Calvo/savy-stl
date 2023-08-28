@@ -58,9 +58,9 @@ const Navbar: React.FC = () => {
   return (
     <div className={styles.navbar}>
       <Toaster position="top-right" />
-      <Link href="/" className={styles.stl}>
-        {/* {svgLogoIcon()} */}
-      </Link>
+      {/* <Link href="/" className={styles.stl}> */}
+      {/* {svgLogoIcon()} */}
+      {/* </Link> */}
       <input className={styles.checkbox} type="checkbox" name="" id="" />
       <div className={styles.hamburgerLines}>
         <span className={`${styles.line} ${styles.lineOne}`}></span>
@@ -68,6 +68,7 @@ const Navbar: React.FC = () => {
         <span className={`${styles.line} ${styles.lineThree}`}></span>
       </div>
 
+      <div className={styles.navBackdrop}></div>
       <nav className={styles.nav}>
         <a className={styles.anchor} onClick={() => handleScrollTo("home")}>
           INICIO
