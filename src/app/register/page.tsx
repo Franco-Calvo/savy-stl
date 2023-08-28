@@ -18,7 +18,7 @@ export default function Register() {
 
     const formInputs: string[] = [];
 
-    const url = "http://localhost:8000/auth/signup";
+    const url = "https://savypixel.onrender.com/auth/signup";
 
     if (formRegister.current) {
       Object.values(formRegister.current).forEach((e: any) => {

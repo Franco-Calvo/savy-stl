@@ -19,7 +19,7 @@ export default function Categories() {
     try {
       const categoryName = categoryInputRef.current.value;
       const response = await axios.post(
-        "http://localhost:8000/category/create",
+        "https://savypixel.onrender.com/category/create",
         {
           name: categoryName,
         }
@@ -34,7 +34,7 @@ export default function Categories() {
   const handleDeleteCategory = async () => {
     try {
       const category = categories.find((cat) => cat.name === selectedCategory);
-      await axios.delete(`http://localhost:8000/category/${category._id}`);
+      await axios.delete(`https://savypixel.onrender.com/category/${category._id}`);
       toast.success(`Categoría eliminada: ${category.name}`);
       setSelectedCategory("");
     } catch (error) {

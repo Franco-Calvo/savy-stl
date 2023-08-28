@@ -6,7 +6,7 @@ const captureCards = createAsyncThunk(
   async ({ captureCategories, captureText }) => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/aws/files" +
+        "https://savypixel.onrender.com/aws/files" +
           "?name=" +
           captureText +
           "&category=" +

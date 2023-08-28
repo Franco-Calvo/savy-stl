@@ -6,7 +6,7 @@ export const signOut = async () => {
 
   try {
     const response = await axios.post(
-      "http://localhost:8000/auth/signout",
+      "https://savypixel.onrender.com/auth/signout",
       null,
       headers
     );

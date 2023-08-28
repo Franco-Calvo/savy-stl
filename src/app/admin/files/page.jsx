@@ -30,7 +30,7 @@ export default function Files() {
   const [selectedFileName, setSelectedFileName] = useState("");
   const [selectedImageName, setSelectedImageName] = useState("");
   const [uploadProgress, setUploadProgress] = useState(0);
-  const url = "http://localhost:8000/aws/upload";
+  const url = "https://savypixel.onrender.com/aws/upload";
 
   const handleFileSelect = (event) => {
     const file = event.target.files[0];

@@ -59,24 +59,27 @@ export default function Page() {
 
   const socketRef = useRef<SocketIOClient.Socket | null>(null);
 
-  const fetchFilteredTickets = useCallback(async (pageNumber: number) => {
-    const payload: PaginationPayload = {
-      page: pageNumber - 1,
-    };
-    try {
-      const response = await axios.post<TicketResponse>(
-        "http://localhost:8000/tickets/filtered",
-        payload
-      );
-      setTicketData(response.data.items);
-      console.log(ticketData);
-    } catch (err) {
-      console.error("Error fetching filtered tickets", err);
-    }
-  }, [ticketData]);
+  const fetchFilteredTickets = useCallback(
+    async (pageNumber: number) => {
+      const payload: PaginationPayload = {
+        page: pageNumber - 1,
+      };
+      try {
+        const response = await axios.post<TicketResponse>(
+          "https://savypixel.onrender.com/tickets/filtered",
+          payload
+        );
+        setTicketData(response.data.items);
+        console.log(ticketData);
+      } catch (err) {
+        console.error("Error fetching filtered tickets", err);
+      }
+    },
+    [ticketData]
+  );
 
   const getMessages = useCallback(async () => {
-    const urlChatMessages = `http://localhost:8000/tickets/messages/${ticketId}`;
+    const urlChatMessages = `https://savypixel.onrender.com/tickets/messages/${ticketId}`;
     try {
       const response = await axios.get(urlChatMessages);
       setMessageData(response.data);
@@ -139,7 +142,7 @@ export default function Page() {
   }
 
   async function postMessage() {
-    const urlSendMessage = `http://localhost:8000/tickets/message`;
+    const urlSendMessage = `https://savypixel.onrender.com/tickets/message`;
 
     const messageDataToSend = {
       text: message,
