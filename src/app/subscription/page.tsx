@@ -43,9 +43,21 @@ const Subscriptions: React.FC<SubscriptionsProps> = () => {
       </div>
 
       <div className={styles.cardsContainer}>
-        <CardSubscriptions title="MENSUAL" price="3.499" />
-        <CardSubscriptions title="MENSUAL" price="3.499" />
-        <CardSubscriptions title="MENSUAL" price="3.499" />
+        <CardSubscriptions
+          title="MENSUAL"
+          price="3.499"
+          onClick={() => handlePayment("month")}
+        />
+        <CardSubscriptions
+          title="SEMESTRAL"
+          price="2.899"
+          onClick={() => handlePayment("semiannual")}
+        />
+        <CardSubscriptions
+          title="ANUAL"
+          price="2.399"
+          onClick={() => handlePayment("year")}
+        />
       </div>
     </div>
   );

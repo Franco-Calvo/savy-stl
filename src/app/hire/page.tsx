@@ -61,7 +61,6 @@ export default function Page({}: Props) {
 
     checkTicketExists();
 
-
     return () => {
       socketRef.current.disconnect();
     };
@@ -127,18 +126,21 @@ export default function Page({}: Props) {
         )}
       </div>
       <div className={styles.containerChat}>
-        {messageData && messageData.length > 0 ? (
-          messageData.map((messageItem: any, index: number) => (
-            <MessageByUser
-              key={index}
-              author={messageItem.author}
-              text={messageItem.text}
-              time={formatTime(messageItem.createdAt)}
-            />
-          ))
-        ) : (
-          <p className={styles.noMessages}>No hay mensajes disponibles</p>
-        )}
+        <div className={styles.chatMessages}>
+          {messageData && messageData.length > 0 ? (
+            messageData.map((messageItem: any, index: number) => (
+              <span className={styles.marginMessage} key={index}>
+                <MessageByUser
+                  author={messageItem.author}
+                  text={messageItem.text}
+                  time={formatTime(messageItem.createdAt)}
+                />
+              </span>
+            ))
+          ) : (
+            <p className={styles.noMessages}>No hay mensajes disponibles</p>
+          )}
+        </div>
       </div>
 
       <div className={styles.sendMessage}>

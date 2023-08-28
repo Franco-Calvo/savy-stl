@@ -34,7 +34,15 @@ const AdminLayoutWrapper = ({ children }) => {
 
   if (isAdmin === null) {
     return (
-      <div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100vw",
+          height: "100vh",
+        }}
+      >
         <Loader />
       </div>
     );

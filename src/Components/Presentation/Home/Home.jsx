@@ -22,7 +22,9 @@ export default function IndexHome() {
             <Link href="/explore" className={styles.gradientButton}>
               Explorar
             </Link>
-            <button className={styles.alternativeButton}>Contratar</button>
+            <Link href="/hire" className={styles.alternativeButton}>
+              Contratar
+            </Link>
           </span>
         </div>
         <div className={styles.containerImg}>{imgAstronaut()}</div>
