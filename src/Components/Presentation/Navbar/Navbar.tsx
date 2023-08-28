@@ -61,6 +61,13 @@ const Navbar: React.FC = () => {
       <Link href="/" className={styles.stl}>
         {/* {svgLogoIcon()} */}
       </Link>
+      <input className={styles.checkbox} type="checkbox" name="" id="" />
+      <div className={styles.hamburgerLines}>
+        <span className={`${styles.line} ${styles.lineOne}`}></span>
+        <span className={`${styles.line} ${styles.lineTwo}`}></span>
+        <span className={`${styles.line} ${styles.lineThree}`}></span>
+      </div>
+
       <nav className={styles.nav}>
         <a className={styles.anchor} onClick={() => handleScrollTo("home")}>
           INICIO
