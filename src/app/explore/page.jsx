@@ -7,6 +7,7 @@ import Card from "../../Components/Containers/Card/Card";
 import useCategory from "../../Hooks/useCategory";
 import actions from "../../store/captureCards/actions";
 import styles from "./Explorer.module.css";
+import useDebounce from "@/Hooks/useDebounce";
 
 const { captureCards } = actions;
 
@@ -16,6 +17,8 @@ export default function Explorer() {
     selectedCategory: "",
     searchTerm: "",
   });
+
+  const debouncedSearchTerm = useDebounce(filterOptions.searchTerm, 300);
 
   const text = useRef("");
 
@@ -48,15 +51,13 @@ export default function Explorer() {
     dispatch(
       captureCards({
         captureCategories: filterOptions.selectedCategory,
-        captureText: filterOptions.searchTerm,
+        captureText: debouncedSearchTerm,
       })
     );
-  }, [dispatch, filterOptions]);
+  }, [dispatch, filterOptions.selectedCategory, debouncedSearchTerm]);
 
   return (
     <div className={styles.containerExplorer}>
-      <Navbar />
-
       <div className={styles.asideBar}>
         <div className={styles.searchBar}>
           <input
@@ -96,16 +97,16 @@ export default function Explorer() {
           </div>
         </div>
 
-        <div className={styles.spamContainer}>
-          <div className={`${styles.spamCards}`}>asd</div>
-          <div className={`${styles.spamCards}`}>asd</div>
-        </div>
+        {/* <div className={styles.spamContainer}>
+          <div className={`${styles.spamCards}`}>Publicite Aquí</div>
+          <div className={`${styles.spamCards}`}>Publicite Aquí</div>
+        </div> */}
       </div>
 
       <div className={styles.cardsContainer}>
-        <div className={`${styles.spamCards} ${styles.spamCardRemove}`}>
-          asd
-        </div>
+        {/* <div className={`${styles.spamCards} ${styles.spamCardRemove}`}>
+          Publicite Aquí
+        </div> */}
         <div className={styles.cardsBox}>
           {publicCards.map((card) => (
             <Card

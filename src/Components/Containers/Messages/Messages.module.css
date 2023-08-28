@@ -1,4 +1,3 @@
-/* MessageByUser.module.css */
 
 .message {
   display: flex;
@@ -10,7 +9,6 @@
 .userMessage {
   align-self: flex-end;
   background-color: #4B4B4B;
-  /* background-color: #007bff; */
   color: white;
   border-radius: 10px 10px 0 10px;
 }
@@ -20,6 +18,7 @@
   background-color: #007bff;
   color: #ffffff;
   border-radius: 10px 10px 10px 0;
+  
 }
 
 .messageText {

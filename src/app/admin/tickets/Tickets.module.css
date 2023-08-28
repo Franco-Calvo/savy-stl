@@ -12,11 +12,57 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80vw;
-  height: 100vh;
+  width: 60vw;
+  height: 100%;
   flex-direction: column;
   gap: 10px;
   margin-right: 21rem;
+}
+
+.containerChat {
+  background: #0c0c0c;
+  border: 1px solid #1a1a1a;
+  border-radius: 8px;
+  height: 60%;
+  width: 100%;
+  padding: 0.5rem;
+  display: flex;
+  overflow-y: scroll;
+}
+
+.containerChat::-webkit-scrollbar {
+  width: 1px;
+  background: transparent;
+  border-radius: 12px;
+}
+
+.containerChat::-webkit-scrollbar-thumb {
+  background-color: #0094ff;
+  border-radius: 12px;
+}
+
+.containerChat::-webkit-scrollbar-thumb:hover {
+  background-color: #0275c7;
+}
+
+.chatMessages {
+  display: flex;
+  width: 100%;
+  height: 60%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.3rem;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.marginMessage {
+  margin-bottom: 5px;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  display: flex;
 }
 
 .budget {
@@ -123,27 +169,6 @@
   color: #707070;
 }
 
-.containerChat {
-  background: #0c0c0c;
-  border: 1px solid #1a1a1a;
-  border-radius: 8px;
-  height: 60%;
-  width: 100%;
-  padding: 0.5rem;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  flex-direction: column;
-}
-
-.scrollMessages {
-  overflow-y: scroll;
-  width: 100%;
-  padding: 0.5rem;
-  position: relative;
-  gap: 0.3rem;
-}
-
 .message {
   background: #3f3f3f;
   color: white;
@@ -206,7 +231,9 @@
 .containerPagination {
   color: white;
   display: flex;
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
   padding: 0.5rem;
 }
 
@@ -216,17 +243,14 @@
 }
 
 .buttonPagination {
-  background: linear-gradient(90deg, #0c79dd 0%, #4200ff 100%);
-  color: white;
-  border: none;
+  background: none;
   outline: none;
-  height: 1.5rem;
-  border-radius: 6px;
+  border: none;
   cursor: pointer;
-  font-weight: 600;
 }
 
 .numPagination {
   color: #185bc3;
   font-weight: 600;
+  font-size: 18px;
 }

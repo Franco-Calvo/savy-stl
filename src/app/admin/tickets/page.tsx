@@ -1,19 +1,20 @@
 //@ts-nocheck
-
 "use client";
 import MessageByAdmin from "@/Components/Containers/Messages/MessageByAdmin";
 import Tickets from "@/Components/Containers/Tickets/Tickets";
 import {
   svgAccept,
+  svgArrowLeft,
+  svgArrowRight,
   svgDecline,
   svgEnviar,
 } from "@/Components/Presentation/Icons/icons";
 import { formatTime } from "@/Intercerptors/FormattedTime";
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
-import { Toaster, toast } from "sonner";
-import styles from "./Tickets.module.css";
 import socketIOClient from "socket.io-client";
+import { Toaster } from "sonner";
+import styles from "./Tickets.module.css";
 
 const ENDPOINT = "http://localhost:8080";
 
@@ -54,6 +55,7 @@ export default function Page() {
   const [ticketId, setTicketId] = useState<any>(null);
   const [currentTicketTitle, setCurrentTicketTitle] = useState<string>("");
   const [messageData, setMessageData] = useState<any>(null);
+  const messagesEndRef = useRef(null);
 
   const socketRef = useRef<SocketIOClient.Socket | null>(null);
 
@@ -87,6 +89,7 @@ export default function Page() {
         payload
       );
       setTicketData(response.data.items);
+      console.log(ticketData);
     } catch (err) {
       console.error("Error fetching filtered tickets", err);
     }
@@ -124,9 +127,14 @@ export default function Page() {
     try {
       const response = await axios.get(urlChatMessages);
       setMessageData(response.data);
-      console.log(response.data);
     } catch (error) {
       console.log(error);
+    }
+  }
+
+  function scrollToBottom() {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }
 
@@ -140,19 +148,28 @@ export default function Page() {
     };
 
     try {
-      const response = await axios.post(urlSendMessage, messageDataToSend);
-
+      await axios.post(urlSendMessage, messageDataToSend);
       setMessageData((prevMessages: any) => [
         ...prevMessages,
         messageDataToSend,
       ]);
-
-      toast.success(response.data.message);
       setMessage("");
+      scrollToBottom();
     } catch (error) {
       console.log(error);
     }
   }
+
+  function handleEnterPress(e: React.KeyboardEvent) {
+    if (e.key === "Enter" && message.trim() !== "") {
+      postMessage();
+      e.preventDefault();
+    }
+  }
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messageData]);
 
   return (
     <div className={styles.hire}>
@@ -162,7 +179,7 @@ export default function Page() {
           <label className={styles.title}></label>
           <button className={styles.createAction}>
             <label className={styles.presupuesto}>
-              Presupuesto: {currentTicketTitle || "Selecciona un ticket"}
+              {currentTicketTitle || "Debes seleccionar un ticket"}
             </label>
             <div className={styles.btns}>
               <div className={styles.decline}>
@@ -177,18 +194,22 @@ export default function Page() {
           </button>
         </div>
         <div className={styles.containerChat}>
-          {messageData && messageData.length > 0 ? (
-            messageData.map((messageData: Message, index: number) => (
-              <MessageByAdmin
-                key={index}
-                author={messageData.author}
-                text={messageData.text}
-                time={formatTime(messageData.createdAt)}
-              />
-            ))
-          ) : (
-            <p className={styles.noMessages}>No hay mensajes disponibles</p>
-          )}
+          <div className={styles.chatMessages}>
+            {messageData && messageData.length > 0 ? (
+              messageData.map((messageData: Message, index: number) => (
+                <span className={styles.marginMessage} key={index}>
+                  <MessageByAdmin
+                    author={messageData.author}
+                    text={messageData.text}
+                    time={formatTime(messageData.createdAt)}
+                  />
+                </span>
+              ))
+            ) : (
+              <p className={styles.noMessages}>No hay mensajes disponibles</p>
+            )}
+            <div ref={messagesEndRef} />
+          </div>
         </div>
         <div className={styles.sendMessage}>
           <input
@@ -196,6 +217,7 @@ export default function Page() {
             placeholder="Envía un mensaje..."
             value={message}
             onChange={(e) => setMessage(e.target.value)}
+            onKeyDown={handleEnterPress}
           />
           <button className={styles.sendMessageBtn} onClick={postMessage}>
             {svgEnviar()}
@@ -215,19 +237,13 @@ export default function Page() {
           />
         ))}
         <div className={styles.containerPagination}>
-          <button
-            className={styles.buttonPagination}
-            onClick={handlePrevButton}
-          >
-            Anterior
-          </button>
+          <div className={styles.buttonPagination} onClick={handlePrevButton}>
+            {svgArrowLeft()}
+          </div>
           <span className={styles.numPagination}>{currentPage}</span>
-          <button
-            className={styles.buttonPagination}
-            onClick={handleNextButton}
-          >
-            Siguiente
-          </button>
+          <div className={styles.buttonPagination} onClick={handleNextButton}>
+            {svgArrowRight()}
+          </div>
         </div>
       </aside>
     </div>

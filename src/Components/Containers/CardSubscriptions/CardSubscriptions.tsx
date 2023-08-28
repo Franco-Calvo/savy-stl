@@ -1,11 +1,9 @@
 //@ts-nocheck
-import React from "react";
-import { svgIcon } from "@/Components/Presentation/Icons/icons";
-import Image from "next/image";
-import styles from "./CardSubscriptions.module.css";
 import { Button } from "@/Components/Containers/Button/Button";
+import { svgIcon } from "@/Components/Presentation/Icons/icons";
+import styles from "./CardSubscriptions.module.css";
 
-export default function CardSubscriptions({ title, price }) {
+export default function CardSubscriptions({ title, price, onClick }) {
   return (
     <div className={styles.card}>
       <div className={styles.cardTop}>
@@ -33,7 +31,11 @@ export default function CardSubscriptions({ title, price }) {
           <span>Soporte prioritario</span>
         </div>
       </div>
-      <Button text="Seleccionar Plan" customStyle={styles.customButton} />
+      <Button
+        text="Seleccionar Plan"
+        customStyle={styles.customButton}
+        onClick={onClick}
+      />
     </div>
   );
 }

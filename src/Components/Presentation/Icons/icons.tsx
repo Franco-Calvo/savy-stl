@@ -130,7 +130,7 @@ export const svgIcon = () => (
     <path
       d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
       fill="#283954"
-      fill-opacity="0.4"
+      fillOpacity="0.4"
     />
   </svg>
 );
@@ -252,9 +252,9 @@ export const svgCryptoFast = () => (
         y2="4.83936"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#7F2CE3" />
-        <stop offset="0.49" stop-color="#449AF9" />
-        <stop offset="1" stop-color="#64EFE2" />
+        <stop stopColor="#7F2CE3" />
+        <stop offset="0.49" stopColor="#449AF9" />
+        <stop offset="1" stopColor="#64EFE2" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_351_740"
@@ -264,9 +264,9 @@ export const svgCryptoFast = () => (
         y2="10.054"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#7F2CE3" />
-        <stop offset="0.49" stop-color="#449AF9" />
-        <stop offset="1" stop-color="#64EFE2" />
+        <stop stopColor="#7F2CE3" />
+        <stop offset="0.49" stopColor="#449AF9" />
+        <stop offset="1" stopColor="#64EFE2" />
       </linearGradient>
       <linearGradient
         id="paint2_linear_351_740"
@@ -276,9 +276,9 @@ export const svgCryptoFast = () => (
         y2="3.49979"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00005B" />
-        <stop offset="0.5" stop-color="#A40085" />
-        <stop offset="1" stop-color="#FD53BA" />
+        <stop stopColor="#00005B" />
+        <stop offset="0.5" stopColor="#A40085" />
+        <stop offset="1" stopColor="#FD53BA" />
       </linearGradient>
       <linearGradient
         id="paint3_linear_351_740"
@@ -288,9 +288,9 @@ export const svgCryptoFast = () => (
         y2="26.8052"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#7F2CE3" />
-        <stop offset="0.49" stop-color="#449AF9" />
-        <stop offset="1" stop-color="#64EFE2" />
+        <stop stopColor="#7F2CE3" />
+        <stop offset="0.49" stopColor="#449AF9" />
+        <stop offset="1" stopColor="#64EFE2" />
       </linearGradient>
       <linearGradient
         id="paint4_linear_351_740"
@@ -300,9 +300,9 @@ export const svgCryptoFast = () => (
         y2="0.643362"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00005B" />
-        <stop offset="0.5" stop-color="#A40085" />
-        <stop offset="1" stop-color="#FD53BA" />
+        <stop stopColor="#00005B" />
+        <stop offset="0.5" stopColor="#A40085" />
+        <stop offset="1" stopColor="#FD53BA" />
       </linearGradient>
       <linearGradient
         id="paint5_linear_351_740"
@@ -312,9 +312,9 @@ export const svgCryptoFast = () => (
         y2="15.1275"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00005B" />
-        <stop offset="0.5" stop-color="#A40085" />
-        <stop offset="1" stop-color="#FD53BA" />
+        <stop stopColor="#00005B" />
+        <stop offset="0.5" stopColor="#A40085" />
+        <stop offset="1" stopColor="#FD53BA" />
       </linearGradient>
       <linearGradient
         id="paint6_linear_351_740"
@@ -324,9 +324,9 @@ export const svgCryptoFast = () => (
         y2="10.1955"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00005B" />
-        <stop offset="0.5" stop-color="#A40085" />
-        <stop offset="1" stop-color="#FD53BA" />
+        <stop stopColor="#00005B" />
+        <stop offset="0.5" stopColor="#A40085" />
+        <stop offset="1" stopColor="#FD53BA" />
       </linearGradient>
     </defs>
   </svg>
@@ -727,3 +727,38 @@ export const svgEnviado = () => (
     />
   </svg>
 );
+<<<<<<< HEAD
+=======
+
+export const svgArrowLeft = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="32"
+    height="32"
+    viewBox="0 0 32 32"
+    fill="none"
+  >
+    <path
+      d="M12.22 16.7199C12.0793 16.5793 12.0002 16.3887 12 16.1899V15.8099C12.0023 15.6114 12.0811 15.4216 12.22 15.2799L17.36 10.1499C17.4539 10.0552 17.5817 10.002 17.715 10.002C17.8483 10.002 17.9761 10.0552 18.07 10.1499L18.78 10.8599C18.8741 10.952 18.9271 11.0782 18.9271 11.2099C18.9271 11.3415 18.8741 11.4677 18.78 11.5599L14.33 15.9999L18.78 20.4399C18.8747 20.5337 18.9279 20.6615 18.9279 20.7949C18.9279 20.9282 18.8747 21.056 18.78 21.1499L18.07 21.8499C17.9761 21.9445 17.8483 21.9978 17.715 21.9978C17.5817 21.9978 17.4539 21.9445 17.36 21.8499L12.22 16.7199Z"
+      fill="#BCBCBC"
+    />
+    <rect x="0.5" y="0.5" width="31" height="31" rx="15.5" stroke="#BCBCBC" />
+  </svg>
+);
+
+export const svgArrowRight = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="32"
+    height="32"
+    viewBox="0 0 32 32"
+    fill="none"
+  >
+    <path
+      d="M19.7077 16.7179C19.8484 16.5774 19.9276 16.3867 19.9277 16.1879V15.8079C19.9254 15.6095 19.8466 15.4196 19.7077 15.2779L14.5677 10.1479C14.4739 10.0532 14.3461 10 14.2127 10C14.0794 10 13.9516 10.0532 13.8577 10.1479L13.1477 10.8579C13.0537 10.9501 13.0007 11.0762 13.0007 11.2079C13.0007 11.3396 13.0537 11.4657 13.1477 11.5579L17.5977 15.9979L13.1477 20.4379C13.0531 20.5318 12.9998 20.6596 12.9998 20.7929C12.9998 20.9262 13.0531 21.054 13.1477 21.1479L13.8577 21.8479C13.9516 21.9426 14.0794 21.9958 14.2127 21.9958C14.3461 21.9958 14.4739 21.9426 14.5677 21.8479L19.7077 16.7179Z"
+      fill="#BCBCBC"
+    />
+    <rect x="0.5" y="0.5" width="31" height="31" rx="15.5" stroke="#BCBCBC" />
+  </svg>
+);
+>>>>>>> 80e609d0141a7ab4fbe1ba3353c9283c26067d12

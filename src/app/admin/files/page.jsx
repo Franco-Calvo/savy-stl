@@ -26,14 +26,11 @@ export default function Files() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [categoryTitle, setcategoryTitle] = useState("");
   const [selectedFileName, setSelectedFileName] = useState("");
   const [selectedImageName, setSelectedImageName] = useState("");
   const [uploadProgress, setUploadProgress] = useState(0);
   const url = "http://localhost:8000/aws/upload";
-
-  const handleChange = (e) => {
-    setSelectedCategory(e.target.value);
-  };
 
   const handleFileSelect = (event) => {
     const file = event.target.files[0];
@@ -45,12 +42,24 @@ export default function Files() {
     setSelectedImageName(fileImage ? fileImage.size : 0);
   };
 
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
+  // const handleChange = (e) => {
+  //   setSelectedCategory(e.target.value);
+  // };
 
-  const handleDescriptionChange = (e) => {
-    setDescription(e.target.value);
+  // const handleNameChange = (e) => {
+  //   setName(e.target.value);
+  // };
+
+  // const handleDescriptionChange = (e) => {
+  //   setDescription(e.target.value);
+  // };
+
+  // const handleTitleChange = (e) => {
+  //   setTitle(e.target.value);
+  // };
+
+  const handleChange = (setState) => (e) => {
+    setState(e.target.value);
   };
 
   const handleUpload = async () => {
@@ -94,7 +103,7 @@ export default function Files() {
             <select
               className="categorySelect"
               value={selectedCategory}
-              onChange={handleChange}
+              onChange={handleChange(setSelectedCategory)}
             >
               <option className="categoryOption" value="">
                 Categorías disponibles
@@ -113,7 +122,7 @@ export default function Files() {
             <input
               type="text"
               className="categorySelect"
-              onChange={handleDescriptionChange}
+              onChange={handleChange(setcategoryTitle)}
               placeholder="Nombre de la categoría"
             />
             <span className="spanIcon">{svgEnviado()}</span>
@@ -170,12 +179,12 @@ export default function Files() {
               <input
                 placeholder="Título de la publicación"
                 value={name}
-                onChange={handleNameChange}
+                onChange={handleChange(setName)}
               />
               <input
                 placeholder="Descripción de la publicación"
                 value={description}
-                onChange={handleDescriptionChange}
+                onChange={handleChange(setDescription)}
               />
             </div>
             <div className="categories">
@@ -188,7 +197,7 @@ export default function Files() {
                   <select
                     className="categorySelect"
                     value={selectedCategory}
-                    onChange={handleChange}
+                    onChange={handleChange(setSelectedCategory)}
                   >
                     <option className="categoryOption" value="">
                       Categorías disponibles
@@ -214,7 +223,7 @@ export default function Files() {
           </span>
 
           <div className="progress-bar-container">
-            <span>Cargando.-.</span>
+            <span className="loading">Cargando...</span>
             <div
               className="progress-bar"
               style={{ width: `${uploadProgress}%` }}
