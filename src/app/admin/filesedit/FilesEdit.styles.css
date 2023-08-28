@@ -1,5 +1,5 @@
 .adminpanel {
-  width: 100%;
+  width: 1200px;
   display: flex;
   justify-content: center;
   min-height: 100vh;
@@ -10,7 +10,7 @@
 }
 
 .adminFiles {
-  width: 70%;
+  width: 100%;
 }
 
 .tableBody {
@@ -89,4 +89,10 @@ input[type="checkbox"] {
 
 .save:hover {
   color: rgb(76, 117, 230);
+}
+
+@media (max-width: 1300px) {
+  .adminpanel {
+    width: 800px;
+  }
 }
