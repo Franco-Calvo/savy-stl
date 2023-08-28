@@ -90,3 +90,9 @@ input[type="checkbox"] {
 .save:hover {
   color: rgb(76, 117, 230);
 }
+
+@media (max-width: 1300px) {
+  .adminpanel {
+    width: 800px;
+  }
+}

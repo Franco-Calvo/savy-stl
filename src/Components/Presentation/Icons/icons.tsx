@@ -727,6 +727,8 @@ export const svgEnviado = () => (
     />
   </svg>
 );
+<<<<<<< HEAD
+=======
 
 export const svgArrowLeft = () => (
   <svg
@@ -759,3 +761,4 @@ export const svgArrowRight = () => (
     <rect x="0.5" y="0.5" width="31" height="31" rx="15.5" stroke="#BCBCBC" />
   </svg>
 );
+>>>>>>> 80e609d0141a7ab4fbe1ba3353c9283c26067d12
