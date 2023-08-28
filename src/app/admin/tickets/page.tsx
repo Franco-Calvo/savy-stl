@@ -59,27 +59,7 @@ export default function Page() {
 
   const socketRef = useRef<SocketIOClient.Socket | null>(null);
 
-  useEffect(() => {
-    socketRef.current = socketIOClient(ENDPOINT);
-
-    socketRef.current.on("newMessage", (message: any) => {
-      setMessageData((prevMessages: any) => [...prevMessages, message]);
-    });
-
-    fetchFilteredTickets(1);
-
-    return () => {
-      socketRef.current.disconnect();
-    };
-  }, []);
-
-  useEffect(() => {
-    if (ticketId) {
-      getMessages();
-    }
-  }, [ticketId]);
-
-  const fetchFilteredTickets = async (pageNumber: number) => {
+  const fetchFilteredTickets = useCallback(async (pageNumber: number) => {
     const payload: PaginationPayload = {
       page: pageNumber - 1,
     };
@@ -93,7 +73,37 @@ export default function Page() {
     } catch (err) {
       console.error("Error fetching filtered tickets", err);
     }
-  };
+  }, [ticketData]);
+
+  const getMessages = useCallback(async () => {
+    const urlChatMessages = `http://localhost:8000/tickets/messages/${ticketId}`;
+    try {
+      const response = await axios.get(urlChatMessages);
+      setMessageData(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }, [ticketId]);
+
+  useEffect(() => {
+    socketRef.current = socketIOClient(ENDPOINT);
+
+    socketRef.current.on("newMessage", (message: any) => {
+      setMessageData((prevMessages: any) => [...prevMessages, message]);
+    });
+
+    fetchFilteredTickets(1);
+
+    return () => {
+      socketRef.current.disconnect();
+    };
+  }, [fetchFilteredTickets]);
+
+  useEffect(() => {
+    if (ticketId) {
+      getMessages();
+    }
+  }, [ticketId, getMessages]);
 
   const handleTicketClick = (id: string, title: string) => {
     setTicketId(id);
@@ -121,16 +131,6 @@ export default function Page() {
       }
     }
   };
-
-  async function getMessages() {
-    const urlChatMessages = `http://localhost:8000/tickets/messages/${ticketId}`;
-    try {
-      const response = await axios.get(urlChatMessages);
-      setMessageData(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
 
   function scrollToBottom() {
     if (messagesEndRef.current) {

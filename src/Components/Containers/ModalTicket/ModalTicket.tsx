@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./ModalTicket.module.css";
 import { Toaster, toast } from "sonner";
 import axios from "axios";
@@ -10,9 +10,15 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
+  const [userID, setUserID] = useState<string | null>(null);
 
-  const userID = localStorage.getItem("userId");
+  const isClient = typeof window !== "undefined";
+
+  useEffect(() => {
+    if (isClient) {
+      setUserID(localStorage.getItem("userId"));
+    }
+  }, []);
 
   const url = "http://localhost:8000/tickets";
 
@@ -35,6 +41,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       toast.error("Ocurrió un error al crear el ticket");
     }
   }
+
+  // Si el modal no está abierto, se regresa null después de que todos los Hooks se hayan ejecutado.
+  if (!isOpen) return null;
 
   return (
     <div className={styles.modal}>

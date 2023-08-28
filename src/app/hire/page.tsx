@@ -1,6 +1,6 @@
 //@ts-nocheck
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { svgEnviar } from "@/Components/Presentation/Icons/icons";
 import styles from "./Hire.module.css";
 import axios from "axios";
@@ -13,11 +13,18 @@ import socketIOClient from "socket.io-client";
 interface Props {}
 
 export default function Page({}: Props) {
+  const isClient = typeof window !== "undefined";
+
   const [title, setTitle] = useState<string>("");
   const [message, setMessage] = useState<string>("");
-  const [userID, setUserID] = useState<string | null>(
-    localStorage.getItem("userId")
-  );
+  const [userID, setUserID] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (isClient) {
+      setUserID(localStorage.getItem("userId"));
+    }
+  }, []);
+
   const [isOpen, setIsOpen] = useState(false);
   const [ticketExists, setTicketExists] = useState(false);
   const [ticketData, setTicketData] = useState<any>(null);
@@ -32,7 +39,9 @@ export default function Page({}: Props) {
 
   const ENDPOINT = "http://localhost:8080";
 
-  async function checkTicketExists() {
+  const socketRef = useRef<SocketIOClient.Socket | null>(null);
+
+  const checkTicketExists = useCallback(async () => {
     if (userID) {
       const urlTicket = `http://localhost:8000/tickets/${userID}`;
       try {
@@ -44,9 +53,17 @@ export default function Page({}: Props) {
         console.log(error);
       }
     }
-  }
+  }, [userID]);
 
-  const socketRef = useRef<SocketIOClient.Socket | null>(null);
+  const getMessages = useCallback(async () => {
+    const urlChatMessages = `http://localhost:8000/tickets/messages/${ticketId}`;
+    try {
+      const response = await axios.get(urlChatMessages);
+      setMessageData(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }, [ticketId]);
 
   useEffect(() => {
     socketRef.current = socketIOClient(ENDPOINT);
@@ -64,25 +81,15 @@ export default function Page({}: Props) {
     return () => {
       socketRef.current.disconnect();
     };
-  }, []);
+  }, [checkTicketExists, userID]);
 
   useEffect(() => {
     checkTicketExists();
-  }, []);
-
-  async function getMessages() {
-    const urlChatMessages = `http://localhost:8000/tickets/messages/${ticketId}`;
-    try {
-      const response = await axios.get(urlChatMessages);
-      setMessageData(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  }, [checkTicketExists]);
 
   useEffect(() => {
     getMessages();
-  }, [ticketId]);
+  }, [getMessages, ticketId]);
 
   async function postMessage() {
     const urlSendMessage = `http://localhost:8000/tickets/message`;
