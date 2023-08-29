@@ -42,7 +42,7 @@ export default function FilesEdit() {
     const newStatus = productStatus[productId] || "public";
 
     axios
-      .put(`https://savypixel.onrender.com/aws/files/${productId}`, {
+      .put(`http://localhost:8000/aws/files/${productId}`, {
         name: newName,
         description: newDescription,
         status: newStatus,
@@ -63,7 +63,7 @@ export default function FilesEdit() {
         label: "Eliminar",
         onClick: () => {
           axios
-            .delete(`https://savypixel.onrender.com/aws/files/${productId}`)
+            .delete(`http://localhost:8000/aws/files/${productId}`)
             .then((response) => {
               toast.success("Producto eliminado:", response.data);
             })

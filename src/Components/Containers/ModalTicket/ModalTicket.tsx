@@ -20,7 +20,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     }
   }, []);
 
-  const url = "https://savypixel.onrender.com/tickets";
+  const url = "http://localhost:8000/tickets";
 
   const [title, setTitle] = useState<string>("");
   const [message, setMessage] = useState<string>("");
@@ -42,7 +42,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     }
   }
 
-  // Si el modal no está abierto, se regresa null después de que todos los Hooks se hayan ejecutado.
   if (!isOpen) return null;
 
   return (

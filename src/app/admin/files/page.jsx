@@ -24,13 +24,16 @@ export default function Files() {
   const imageInputRef = useRef();
   const { categories, loading, error } = useCategory();
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedCategoryDelete, setSelectedCategoryDelete] = useState("");
   const [name, setName] = useState("");
+  const [categoryName, setCategoryName] = useState("");
   const [description, setDescription] = useState("");
   const [categoryTitle, setcategoryTitle] = useState("");
   const [selectedFileName, setSelectedFileName] = useState("");
   const [selectedImageName, setSelectedImageName] = useState("");
   const [uploadProgress, setUploadProgress] = useState(0);
-  const url = "https://savypixel.onrender.com/aws/upload";
+  const url = "http://localhost:8000/aws/upload";
+  const categoryInputRef = useRef(null);
 
   const handleFileSelect = (event) => {
     const file = event.target.files[0];
@@ -41,22 +44,6 @@ export default function Files() {
     const fileImage = event.target.files[0];
     setSelectedImageName(fileImage ? fileImage.size : 0);
   };
-
-  // const handleChange = (e) => {
-  //   setSelectedCategory(e.target.value);
-  // };
-
-  // const handleNameChange = (e) => {
-  //   setName(e.target.value);
-  // };
-
-  // const handleDescriptionChange = (e) => {
-  //   setDescription(e.target.value);
-  // };
-
-  // const handleTitleChange = (e) => {
-  //   setTitle(e.target.value);
-  // };
 
   const handleChange = (setState) => (e) => {
     setState(e.target.value);
@@ -92,7 +79,37 @@ export default function Files() {
     }
   };
 
+  const handleCreateCategory = async () => {
+    try {
+      const categoryName = categoryInputRef.current.value;
+      const response = await axios.post(
+        "http://localhost:8000/category/create",
+        {
+          name: categoryName,
+        }
+      );
+      toast.success(`Categoría creada: ${response.data.name}`);
+      setCategoryName("");
+    } catch (error) {
+      toast.error(error.response.data);
+    }
+  };
+
+  const handleDeleteCategory = async () => {
+    try {
+      const category = categories.find((cat) => cat.name === selectedCategory);
+      await axios.delete(`http://localhost:8000/category/${category._id}`);
+      toast.success(`Categoría eliminada: ${category.name}`);
+      setSelectedCategoryDelete("");
+    } catch (error) {
+      console.log(error);
+      toast.error("Error al eliminar la categoría");
+    }
+  };
+
   const filteredCategories = categories.filter((cat) => cat.name);
+
+  console.log(filteredCategories);
 
   return (
     <div className="adminpanel">
@@ -100,32 +117,49 @@ export default function Files() {
         <Toaster position="top-right" />
         <div className="containerSelect">
           <span className="spanIconContainer">
-            <select
-              className="categorySelect"
-              value={selectedCategory}
-              onChange={handleChange(setSelectedCategory)}
-            >
-              <option className="categoryOption" value="">
-                Categorías disponibles
-              </option>
-              {filteredCategories.map((cat) => (
-                <option className="" key={cat._id} value={cat.name}>
-                  {cat.name}
-                </option>
-              ))}
-            </select>
+            {loading ? (
+              <p>Loading...</p>
+            ) : error ? (
+              <p>Error: {error}</p>
+            ) : (
+              <div className="createCategories">
+                <select
+                  className="categorySelect"
+                  value={selectedCategory}
+                  onChange={handleChange}
+                >
+                  <option className="categoryOption" value="">
+                    Categorías disponibles
+                  </option>
+                  {filteredCategories.map((cat) => (
+                    <option
+                      className="categoryOption"
+                      key={cat._id}
+                      value={cat.name}
+                    >
+                      {cat.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
 
-            <span className="spanIcon">{svgEliminar()}</span>
+            <span className="spanIcon" onClick={handleDeleteCategory}>
+              {svgEliminar()}
+            </span>
           </span>
 
           <span className="spanIconContainer">
             <input
               type="text"
               className="categorySelect"
+              ref={categoryInputRef}
               onChange={handleChange(setcategoryTitle)}
               placeholder="Nombre de la categoría"
             />
-            <span className="spanIcon">{svgEnviado()}</span>
+            <span className="spanIcon" onClick={handleCreateCategory}>
+              {svgEnviado()}
+            </span>
           </span>
         </div>
 
@@ -211,8 +245,8 @@ export default function Files() {
                 </>
               )}
 
-              <select>
-                <option value="Público">Público</option>
+              <select disabled>
+                <option value="Público">No disponible</option>
                 <option value="Privado">Privado</option>
               </select>
             </div>
@@ -223,7 +257,6 @@ export default function Files() {
           </span>
 
           <div className="progress-bar-container">
-            <span className="loading">Cargando...</span>
             <div
               className="progress-bar"
               style={{ width: `${uploadProgress}%` }}

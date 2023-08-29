@@ -7,7 +7,7 @@ const useAuth = (): boolean => {
     const checkTokenValidity = async () => {
       const token = localStorage.getItem("token");
 
-      const url = "https://savypixel.onrender.com/verifyToken";
+      const url = "http://localhost:8000/verifyToken";
 
       if (token) {
         try {
