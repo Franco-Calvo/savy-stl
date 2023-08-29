@@ -11,7 +11,7 @@ import {
 } from "@/Components/Presentation/Icons/icons";
 import { formatTime } from "@/Intercerptors/FormattedTime";
 import axios from "axios";
-import { useEffect, useRef, useState, useCallback} from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import socketIOClient from "socket.io-client";
 import { Toaster } from "sonner";
 import styles from "./Tickets.module.css";
@@ -66,7 +66,7 @@ export default function Page() {
       };
       try {
         const response = await axios.post<TicketResponse>(
-          "http://localhost:8000/tickets/filtered",
+          "https://savypixel.onrender.com/tickets/filtered",
           payload
         );
         setTicketData(response.data.items);
@@ -79,7 +79,7 @@ export default function Page() {
   );
 
   const getMessages = useCallback(async () => {
-    const urlChatMessages = `http://localhost:8000/tickets/messages/${ticketId}`;
+    const urlChatMessages = `https://savypixel.onrender.com/tickets/messages/${ticketId}`;
     try {
       const response = await axios.get(urlChatMessages);
       setMessageData(response.data);
@@ -142,7 +142,7 @@ export default function Page() {
   }
 
   async function postMessage() {
-    const urlSendMessage = `http://localhost:8000/tickets/message`;
+    const urlSendMessage = `https://savypixel.onrender.com/tickets/message`;
 
     const messageDataToSend = {
       text: message,

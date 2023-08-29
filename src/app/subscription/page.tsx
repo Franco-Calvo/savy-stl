@@ -16,10 +16,13 @@ const Subscriptions: React.FC<SubscriptionsProps> = () => {
     const userEmail = JSON.parse(localStorage.getItem("user")!).email;
 
     try {
-      const res = await axios.post("http://localhost:8000/create-order", {
-        email: userEmail,
-        subscriptionType: subscriptionType,
-      });
+      const res = await axios.post(
+        "https://savypixel.onrender.com/create-order",
+        {
+          email: userEmail,
+          subscriptionType: subscriptionType,
+        }
+      );
       const urlToPay = res.data.init_point;
       window.open(urlToPay, "_blank");
     } catch (error) {

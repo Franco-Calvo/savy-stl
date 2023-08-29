@@ -26,7 +26,7 @@ const useCategory = (): UseCategoryResult => {
       const fetchCategories = async () => {
         try {
           const response = await axios.get<Category[]>(
-            "http://localhost:8000/category/"
+            "https://savypixel.onrender.com/category/"
           );
           setCategories(response.data);
           setLoading(false);

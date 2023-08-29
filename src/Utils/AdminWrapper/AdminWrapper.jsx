@@ -12,7 +12,7 @@ const AdminLayoutWrapper = ({ children }) => {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          "http://localhost:8000/auth/verifytoken",
+          "https://savypixel.onrender.com/auth/verifytoken",
           {
             headers: { Authorization: `Bearer ${token}` },
           }

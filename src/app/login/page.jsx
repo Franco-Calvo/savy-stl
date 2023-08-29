@@ -24,7 +24,7 @@ export default function Login() {
       password: formInputs[1],
     };
 
-    const url = "http://localhost:8000/auth/signin";
+    const url = "https://savypixel.onrender.com/auth/signin";
 
     try {
       const res = await axios.post(url, data);

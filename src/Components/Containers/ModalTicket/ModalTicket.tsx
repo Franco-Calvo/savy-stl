@@ -20,7 +20,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     }
   }, []);
 
-  const url = "http://localhost:8000/tickets";
+  const url = "https://savypixel.onrender.com/tickets";
 
   const [title, setTitle] = useState<string>("");
   const [message, setMessage] = useState<string>("");

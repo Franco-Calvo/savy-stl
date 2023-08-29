@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/auth/signout",
+        "https://savypixel.onrender.com/auth/signout",
         { is_online: false },
         { headers: { Authorization: `Bearer ${token}` } }
       );
