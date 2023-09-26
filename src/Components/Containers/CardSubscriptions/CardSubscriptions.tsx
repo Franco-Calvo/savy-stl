@@ -3,13 +3,28 @@ import { Button } from "@/Components/Containers/Button/Button";
 import { svgIcon } from "@/Components/Presentation/Icons/icons";
 import styles from "./CardSubscriptions.module.css";
 
-export default function CardSubscriptions({ title, price, onClick }) {
+interface CardSubscriptionsProps {
+  title: string;
+  price: string;
+  onClick: () => void;
+  month?: string;
+}
+
+export default function CardSubscriptions({
+  title,
+  price,
+  onClick,
+  month,
+}: CardSubscriptionsProps) {
   return (
     <div className={styles.card}>
       <div className={styles.cardTop}>
         <h3>{title}</h3>
         <div className={styles.cardPrice}>
-          <span className={styles.price}>${price}</span>
+          <span className={styles.price}>
+            ${price}
+            <span className={styles.month}>{month}</span>
+          </span>
         </div>
       </div>
 

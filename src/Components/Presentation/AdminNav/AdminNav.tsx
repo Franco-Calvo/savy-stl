@@ -23,15 +23,15 @@ const AdminNav: React.FC = () => {
         {svgBack()}
       </button>
       <span className={styles.navTop}>
-        <Link href="/admin/categories">
-          {svgNavCub()} <span className={`${styles.adminText} ${isExpanded ? styles.visible : styles.novisible}`}>Categorías</span>
+        <Link href="/admin/filesedit">
+          {svgNavCub()} <span className={`${styles.adminText} ${isExpanded ? styles.visible : styles.novisible}`}>Editor</span>
         </Link>
         <Link href="/admin/files">
           {svgHeart()} <span className={`${styles.adminText} ${isExpanded ? styles.visible : styles.novisible}`}>Archivos</span>
         </Link>
-        <Link href="/">
+        {/* <Link href="/">
           {svgCrown()} <span className={`${styles.adminText} ${isExpanded ? styles.visible : styles.novisible}`}>Estadísticas</span>
-        </Link>
+        </Link> */}
         <Link href="/admin/tickets">
           {svgMessage()} <span className={`${styles.adminText} ${isExpanded ? styles.visible : styles.novisible}`}>Tickets</span>
         </Link>

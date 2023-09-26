@@ -46,3 +46,7 @@
   gap: 8px;
   color: rgba(233, 231, 231, 0.63);
 }
+
+.month {
+  font-size: 14px;
+}

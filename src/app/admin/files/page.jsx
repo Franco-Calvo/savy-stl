@@ -32,7 +32,7 @@ export default function Files() {
   const [selectedFileName, setSelectedFileName] = useState("");
   const [selectedImageName, setSelectedImageName] = useState("");
   const [uploadProgress, setUploadProgress] = useState(0);
-  const url = "https://savypixel.onrender.com/aws/upload";
+  const url = "http://localhost:8000/aws/upload";
   const categoryInputRef = useRef(null);
 
   const handleFileSelect = (event) => {
@@ -75,7 +75,7 @@ export default function Files() {
     } catch (error) {
       console.error(error);
       setUploadProgress(0);
-      toast.error("Error al subir los archivos");
+      // toast.error("Error al subir los archivos");
     }
   };
 
@@ -83,7 +83,7 @@ export default function Files() {
     try {
       const categoryName = categoryInputRef.current.value;
       const response = await axios.post(
-        "https://savypixel.onrender.com/category/create",
+        "http://localhost:8000/category/create",
         {
           name: categoryName,
         }
@@ -98,9 +98,7 @@ export default function Files() {
   const handleDeleteCategory = async () => {
     try {
       const category = categories.find((cat) => cat.name === selectedCategory);
-      await axios.delete(
-        `https://savypixel.onrender.com/category/${category._id}`
-      );
+      await axios.delete(`http://localhost:8000/category/${category._id}`);
       toast.success(`Categoría eliminada: ${category.name}`);
       setSelectedCategoryDelete("");
     } catch (error) {
@@ -111,7 +109,6 @@ export default function Files() {
 
   const filteredCategories = categories.filter((cat) => cat.name);
 
-  console.log(filteredCategories);
 
   return (
     <div className="adminpanel">

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./CustomDesigns.module.css";
 import Steps from "../../Containers/Steps/Steps";
-import Footer from "../Footer/Footer";
+import Footer from "../ErrorPage/Footer/Footer";
 
 export default function CustomDesigns() {
   return (

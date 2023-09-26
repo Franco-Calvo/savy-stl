@@ -8,10 +8,10 @@ export default function AdminLayout({
 }) {
   return (
     <>
-      <AdminWrapper>
-        <AdminNav />
-        {children}
-      </AdminWrapper>
+      {/* <AdminWrapper> */}
+      <AdminNav />
+      {children}
+      {/* </AdminWrapper> */}
     </>
   );
 }

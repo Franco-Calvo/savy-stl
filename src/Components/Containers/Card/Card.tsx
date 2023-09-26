@@ -25,8 +25,8 @@ const Card: React.FC<CardProps> = ({
           src={image}
           alt="Producto"
           className={styles.cardPicture}
-          width={200}
-          height={200}
+          width={100}
+          height={100}
         />
       </div>
 

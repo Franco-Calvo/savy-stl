@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
 
     try {
       const response = await axios.post(
-        "https://savypixel.onrender.com/auth/signout",
+        "http://localhost:8000/auth/signout",
         { is_online: false },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -81,6 +81,12 @@ const Navbar: React.FC = () => {
           onClick={() => handleScrollTo("customDesigns")}
         >
           DISEÑOS PERSONALIZADOS
+        </a>
+        <a className={styles.anchor} href="/hire">
+          SOPORTE
+        </a>
+        <a className={styles.anchor} href="/subscription">
+          SUSCRIPCIÓN
         </a>
         {!isLogged && (
           <Link className={styles.anchor} href="/login">

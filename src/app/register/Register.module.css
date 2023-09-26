@@ -87,6 +87,12 @@
   align-items: center;
 }
 
+.notAccount a {
+  text-decoration: underline;
+  color: #fff;
+  font-weight: 500;
+}
+
 @keyframes bounce {
   0% {
     transform: translateY(0);

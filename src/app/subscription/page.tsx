@@ -16,13 +16,10 @@ const Subscriptions: React.FC<SubscriptionsProps> = () => {
     const userEmail = JSON.parse(localStorage.getItem("user")!).email;
 
     try {
-      const res = await axios.post(
-        "https://savypixel.onrender.com/create-order",
-        {
-          email: userEmail,
-          subscriptionType: subscriptionType,
-        }
-      );
+      const res = await axios.post("http://localhost:8000/create-order", {
+        email: userEmail,
+        subscriptionType: subscriptionType,
+      });
       const urlToPay = res.data.init_point;
       window.open(urlToPay, "_blank");
     } catch (error) {
@@ -54,11 +51,13 @@ const Subscriptions: React.FC<SubscriptionsProps> = () => {
         <CardSubscriptions
           title="SEMESTRAL"
           price="2.899"
+          month="/mes"
           onClick={() => handlePayment("semiannual")}
         />
         <CardSubscriptions
           title="ANUAL"
           price="2.399"
+          month="/mes"
           onClick={() => handlePayment("year")}
         />
       </div>

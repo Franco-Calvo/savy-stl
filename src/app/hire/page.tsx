@@ -43,7 +43,7 @@ export default function Page({}: Props) {
 
   const checkTicketExists = useCallback(async () => {
     if (userID) {
-      const urlTicket = `https://savypixel.onrender.com/tickets/${userID}`;
+      const urlTicket = `http://localhost:8000/tickets/${userID}`;
       try {
         const response = await axios.get(urlTicket);
         setTicketData(response.data);
@@ -56,7 +56,7 @@ export default function Page({}: Props) {
   }, [userID]);
 
   const getMessages = useCallback(async () => {
-    const urlChatMessages = `https://savypixel.onrender.com/tickets/messages/${ticketId}`;
+    const urlChatMessages = `http://localhost:8000/tickets/messages/${ticketId}`;
     try {
       const response = await axios.get(urlChatMessages);
       setMessageData(response.data);
@@ -92,7 +92,7 @@ export default function Page({}: Props) {
   }, [getMessages, ticketId]);
 
   async function postMessage() {
-    const urlSendMessage = `https://savypixel.onrender.com/tickets/message`;
+    const urlSendMessage = `http://localhost:8000/tickets/message`;
 
     const messageDataToSend = {
       text: message,

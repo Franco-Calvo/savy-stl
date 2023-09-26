@@ -35,7 +35,7 @@ export default function Explorer() {
   };
 
   const cards = useSelector((store) => store.cardsReducer.cards);
-  const publicCards = cards.filter((card) => card.status === "public");
+  const publicCards = cards.filter((card) => !card.hasOwnProperty("status"));
 
   const dispatch = useDispatch();
 
@@ -63,6 +63,8 @@ export default function Explorer() {
       setHasMore(false);
     }
   };
+
+  console.log(cards);
 
   useEffect(() => {
     dispatch(
